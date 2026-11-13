@@ -56,6 +56,7 @@ export GAVEL_DATABASE_URL="$DATABASE_URL"
 export GAVEL_ADDR=":${PORT}"
 export GAVEL_DATA_DIR="/tmp/gavel-e2e-data"
 export GAVEL_SECURE_COOKIES="false"
+export GAVEL_ADMIN_PASSWORD="changeme"
 
 mkdir -p "$GAVEL_DATA_DIR"
 

@@ -6,7 +6,7 @@ const PG_CONTAINER = "gavel-e2e-postgres";
 const PG_USER = "gavel";
 const PG_DB = "gaveltest";
 
-const SEED_EMAIL = "admin@local";
+const SEED_EMAIL = "admin@gavel.local";
 const ADMIN_EMAIL = "admin@local.dev";
 const SEED_PASSWORD = "changeme";
 const E2E_PASSWORD = "E2eTestPass1!";
@@ -165,7 +165,17 @@ async function seedTestData(cookie: string): Promise<void> {
 
   const finalizeRes = await apiPost(
     `/api/v1/casefiles/${casefileId}/finalize`,
-    {},
+    {
+      verdict: { outcome: "pass", evaluated_at: now },
+      counters: {
+        findings_count: 0,
+        coverage_percent: 85,
+        new_count: 0,
+        existing_count: 0,
+        resolved_count: 0,
+        has_tracking: false,
+      },
+    },
     cookie,
   );
   if (finalizeRes.status !== 200) {
