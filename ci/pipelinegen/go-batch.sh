@@ -21,7 +21,7 @@ if [ "${GAVEL_DOCKER:-}" = true ]; then
 	docker info >/dev/null 2>&1 || { echo "the Docker daemon did not start" >&2; tail -20 "$root/dockerd.log" >&2; exit 1; }
 fi
 
-common=(--jobs="${GAVEL_BAZEL_JOBS:-4}" --noshow_progress --test_output=errors)
+common=(--jobs="${GAVEL_BAZEL_JOBS:-4}" --noshow_progress --test_output=errors --test_arg=-test.v)
 if [ "${PIPELINEGEN_RECORD:-false}" = true ]; then
 	verb=coverage
 	common+=(--@rules_go//go/config:cover_format=go_cover --instrumentation_filter='^//' --combined_report=none)
@@ -64,7 +64,8 @@ json_string() {
 	for t in $targets; do
 		dir=$root/source/bazel-testlogs/${t#//}
 		dir=${dir/://}
-		n=$(grep -o 'tests="[0-9]*"' "$dir/test.xml" 2>/dev/null | head -1 | tr -dc 0-9)
+		# top-level tests only; subtests are indented
+		n=$(grep -cE '^--- (PASS|FAIL|SKIP):' "$dir/test.log" 2>/dev/null)
 		count=$((count + ${n:-0}))
 		if [ -f "$dir/coverage.dat" ]; then
 			cp "$dir/coverage.dat" "coverage/$name/$(basename "${dir}").coverprofile"
