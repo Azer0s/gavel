@@ -1,4 +1,7 @@
-import { test as base, expect, type Page } from "@playwright/test";
+import { test as playwright, expect, type Page } from "@playwright/test";
+import { recorded } from "./recording";
+
+const base = recorded(playwright);
 
 const ADMIN_EMAIL = "admin@local.dev";
 const E2E_PASSWORD = "E2eTestPass1!";

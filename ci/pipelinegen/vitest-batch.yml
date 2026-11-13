@@ -1,0 +1,16 @@
+# The batch task of the vitest suite (vitest-batch.sh).
+platform: linux
+image_resource:
+  type: registry-image
+  source: {repository: node, tag: 22-bookworm}
+inputs:
+  - name: source
+  - name: batches
+  - name: tools
+outputs:
+  - name: result
+caches:
+  - path: cache
+run:
+  path: bash
+  args: [source/ci/pipelinegen/vitest-batch.sh]
