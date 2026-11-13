@@ -4,6 +4,57 @@ bazel:
   workspace: .
   bazelisk: bazelisk
 
+# --- GitHub: where runs report (statuses, the pull request comment) and
+# where the run state lives (hidden refs of this repository).
+github:
+  repository: Azer0s/gavel
+  token: github_token            # the name of a Concourse var, never the token
+
+# The run state lives in hidden refs (the default). The store's branch name
+# matters only with `store.backend: branch`, but it must not be a branch a
+# run starts from, and this fork's runs start from a branch called pipelinegen.
+store: {branch: pipelinegen-store}
+
+# --- Concourse: what the generated pipeline needs. The web address is left
+# out on purpose: whoever generates the pipeline gives it in
+# PIPELINEGEN_CONCOURSE_URL, so no host name lands in this public file.
+concourse:
+  team: main
+  branch: pipelinegen            # this fork's default branch for the tool; yours is main
+  repository:
+    uri: https://github.com/Azer0s/gavel.git
+    username: x-access-token
+    password: ((github_token))
+  planner:
+    image: {repository: golang, tag: 1.27.1}
+    digest: sha256:162be5298a40ed317005c8339c6de4d10d3eef336d66dc8e9259b03ab9d3a6d2
+    # the Go plugins read the module cache and never download: fill it first
+    prepare: go mod download && (cd tools && go mod download)
+    bootstrap:
+      release: {version: v0.1.12-rc.2, sha256: d1d05ed4518da1e0c8690c5343779643927b18712808c03c047d1a20e1d57a31}
+      bazelisk: {version: v1.30.0, sha256: a248ae2b2b62b5baebb748f6fba7203bff1a27e5d01b55399a8406744cb539e8}
+
+plugins:
+  # What exists: every Go declaration and module, with a digest that
+  # ignores comments and formatting.
+  - name: go-sbom
+    kind: sbom
+    repository: sideways-works/go-sbom
+    release: {version: v0.1.3-rc.1, sha256: 45a8be5af1f6096389ccf22cd82d63a8c86e54defcc664d4bcce00b21d59ecb6}
+    exclude: ["examples/**"]
+  # Who uses what: links between declarations, and which declarations each
+  # test file ran, read from the coverage the batch leaves.
+  - name: go-correlator
+    kind: correlator
+    repository: sideways-works/go-correlator
+    release: {version: v0.1.8-rc.2, sha256: 28d1eff041c5f0321409bf38ad49f539e3d93b7d8cca59ed62ac909abc6be2ab}
+    exclude: ["examples/**"]
+  # Writes the Concourse pipeline from this file.
+  - name: concourse
+    kind: runner
+    repository: sideways-works/concourse-runner
+    release: {version: v0.1.8-rc.2, sha256: 2a1c098170fcf0e1150ca5a4354b41a7b44166ae2949e69946968552c2583ac1}
+
 suites:
   # Go tests that need nothing but Bazel: one slice per _test.go file.
   go:
@@ -18,12 +69,14 @@ suites:
       - "core/infrastructure/platform/sourceblob/*_test.go"
       - "core/infrastructure/supporting/search/*_test.go"
       - "apps/cli/test/integration/submit/*_test.go"
+    bind: recorded
     run_slice: ci/pipelinegen/go-batch.yml
 
   # Go tests of packages whose tests start PostgreSQL through testcontainers:
   # their batches start a Docker daemon of their own.
   go-db:
     tests: ["core/infrastructure/*/postgres/*_test.go", "core/infrastructure/platform/database/*_test.go", "core/infrastructure/platform/sourceblob/*_test.go", "core/infrastructure/supporting/search/*_test.go", "apps/cli/test/integration/submit/*_test.go"]
+    bind: recorded
     privileged: true
     run_slice: ci/pipelinegen/go-db-batch.yml
 
@@ -42,6 +95,39 @@ suites:
         deps: ["//apps/server/cmd/gavel-server"]
     privileged: true
     run_slice: ci/pipelinegen/e2e-batch.yml
+
+runs:
+  # Ready pull requests into the default branch: the change merged into its
+  # tip, compared with that tip. Only the test files it reaches run.
+  pr:
+    trigger:
+      pull_requests: {base: pipelinegen, draft: false}
+    compare: merged_target
+    select: affected
+    suites: {go: {}, go-db: {}, web: {}, e2e: {}}
+    record: true
+    report:
+      comment: {format: mermaid}
+      reasoning: true
+
+  # Every commit on the default branch, compared with the last one whose run
+  # passed. Its recordings become the lists the next plans read.
+  main:
+    trigger: {branch: pipelinegen}
+    compare: last_passed
+    select: affected
+    suites: {go: {}, go-db: {}, web: {}, e2e: {}}
+    record: true
+
+  # Once a night, everything: the net under every narrowing.
+  nightly:
+    trigger:
+      timer: {start: "3:00", stop: "4:00"}
+      branch: pipelinegen
+    compare: none
+    select: all
+    suites: {go: {}, go-db: {}, web: {}, e2e: {}}
+    record: true
 
 everything_on:
   - pipelinegen.yaml
