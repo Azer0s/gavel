@@ -46,7 +46,7 @@ if [ "${PIPELINEGEN_RECORD:-false}" = true ]; then
 	dist=$tree/apps/web/dist
 	rm -rf "$dist"; mkdir -p "$dist"
 	cp "$tree/bazel-bin/apps/web/dist/index.html" "$tree/bazel-bin/apps/web/dist/styles.css" "$dist/"
-	(cd "$tree/apps/web" && node "$nm/esbuild/bin/esbuild" src/main.tsx --bundle --minify --sourcemap \
+	(cd "$tree/apps/web" && "$nm/esbuild/bin/esbuild" src/main.tsx --bundle --minify --sourcemap \
 		--target=es2020 --platform=browser --jsx=automatic --loader:.css=empty \
 		--define:import.meta.env.DEV=false --tsconfig=tsconfig.app.json --outfile=dist/bundle.js) || exit 1
 fi
@@ -58,24 +58,28 @@ cover=()
 [ "${PIPELINEGEN_RECORD:-false}" = true ] && cover=(-cover -covermode=atomic -coverpkg=github.com/usegavel/gavel/...)
 (cd "$tree" && go build "${cover[@]}" -o "$root/gavel-server" ./apps/server/cmd/gavel-server) || exit 1
 
+serve() {
+	GAVEL_DATABASE_URL="postgres://gavel:gavel@localhost:$pg_port/gaveltest?sslmode=disable" \
+		GAVEL_ADDR="127.0.0.1:$port" GAVEL_DATA_DIR=$1 GAVEL_SECURE_COOKIES=false GAVEL_ADMIN_PASSWORD=changeme \
+		RUNFILES_DIR=$root/runfiles exec "$root/gavel-server" serve
+}
+up() { for _ in $(seq 60); do curl -fs "http://127.0.0.1:$port/healthz" >/dev/null && return 0; sleep 1; done; return 1; }
+
+data=$(mktemp -d "$root/data.XXXX")
+
 "$pg" slice setup-end
 
 "$pg" slice list | while IFS="$(printf '\t')" read -r name label target sources tests; do
 	"$pg" slice start "$name"
 	mkdir -p "result/$(dirname "$name")" "coverage/$name/gocoverdir"
-	data=$(mktemp -d "$root/data.XXXX")
-	GOCOVERDIR=$root/coverage/$name/gocoverdir RUNFILES_DIR=$root/runfiles \
-		GAVEL_DATABASE_URL="postgres://gavel:gavel@localhost:$pg_port/gaveltest?sslmode=disable" \
-		GAVEL_ADDR="127.0.0.1:$port" GAVEL_DATA_DIR=$data GAVEL_SECURE_COOKIES=false \
-		"$root/gavel-server" serve >"result/$name.server.log" 2>&1 &
+	GOCOVERDIR=$root/coverage/$name/gocoverdir serve "$data" >"result/$name.server.log" 2>&1 &
 	server=$!
-	for _ in $(seq 60); do curl -fs "http://127.0.0.1:$port/healthz" >/dev/null && break; sleep 1; done
+	up
 	(cd "$tree/apps/web" && PIPELINEGEN_COVERAGE=$root/coverage PIPELINEGEN_TREE=$tree \
 		REACT_CORRELATOR_FIXTURE=$root/tools/react-correlator/playwright.mjs PLAYWRIGHT_JSON=$root/result/$name.playwright.json \
 		node "$nm/@playwright/test/cli.js" test -c playwright.pipelinegen.config.ts "${name#apps/web/}") >"result/$name.log" 2>&1
 	code=$?
 	kill -TERM "$server"; wait "$server"
-	rm -rf "$data"
 	n=$(grep -cE '^ +[✓✘-] ' "result/$name.log")
 	if [ $code = 0 ]; then
 		printf '{"passed": true, "tests": %d}\n' "${n:-0}" >"result/$name.json"
