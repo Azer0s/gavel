@@ -1,0 +1,21 @@
+# The batch task of the e2e suite (e2e-batch.sh). Privileged, for the
+# Docker daemon the server tests' PostgreSQL runs in.
+platform: linux
+image_resource:
+  type: registry-image
+  source: {repository: golang, tag: 1.25.7-bookworm}
+inputs:
+  - name: source
+  - name: batches
+  - name: tools
+outputs:
+  - name: result
+caches:
+  - path: cache
+run:
+  path: bash
+  args:
+    - -euc
+    - |
+      apt-get update -qq && apt-get install -y -qq docker.io >/dev/null
+      exec bash source/ci/pipelinegen/e2e-batch.sh

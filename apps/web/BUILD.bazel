@@ -59,3 +59,24 @@ web_project(
         "@tanstack/react-table",
     ],
 )
+
+# pipelinegen: each of the app's two checks is a slice of the web suite.
+# The filegroup carries the suite's tag and names the test target that runs
+# it; a change reaches the slice when it reaches that target.
+filegroup(
+    name = "typecheck_slice",
+    srcs = [":web.typecheck"],
+    tags = [
+        "pipelinegen-run://apps/web:web.typecheck",
+        "slice-web",
+    ],
+)
+
+filegroup(
+    name = "lint_slice",
+    srcs = [":web.lint"],
+    tags = [
+        "pipelinegen-run://apps/web:web.lint",
+        "slice-web",
+    ],
+)

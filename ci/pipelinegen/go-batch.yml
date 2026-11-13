@@ -1,0 +1,20 @@
+# The batch task of the go and go-db suites: one Bazel output root per
+# worker, kept in the task's cache, and the batch script in go-batch.sh.
+platform: linux
+image_resource:
+  type: registry-image
+  source: {repository: golang, tag: 1.25.7-bookworm}
+inputs:
+  - name: source
+  - name: batches
+  - name: tools
+outputs:
+  - name: result
+  - name: coverage
+caches:
+  - path: cache
+params:
+  GAVEL_DOCKER: ""
+run:
+  path: bash
+  args: [source/ci/pipelinegen/go-batch.sh]

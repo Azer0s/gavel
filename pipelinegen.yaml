@@ -1,0 +1,77 @@
+pipeline: gavel
+
+bazel:
+  workspace: .
+  bazelisk: bazelisk
+
+suites:
+  # Go tests that need nothing but Bazel: one slice per _test.go file.
+  go:
+    tests: ["**/*_test.go"]
+    exclude:
+      - "examples/**"
+      - "apps/cli/test/e2e/*_test.go"
+      - "apps/server/test/e2e/**"
+      # the database tests are the go-db suite
+      - "core/infrastructure/*/postgres/*_test.go"
+      - "core/infrastructure/platform/database/*_test.go"
+      - "core/infrastructure/platform/sourceblob/*_test.go"
+      - "core/infrastructure/supporting/search/*_test.go"
+      - "apps/cli/test/integration/submit/*_test.go"
+    run_slice: ci/pipelinegen/go-batch.yml
+
+  # Go tests of packages whose tests start PostgreSQL through testcontainers:
+  # their batches start a Docker daemon of their own.
+  go-db:
+    tests: ["core/infrastructure/*/postgres/*_test.go", "core/infrastructure/platform/database/*_test.go", "core/infrastructure/platform/sourceblob/*_test.go", "core/infrastructure/supporting/search/*_test.go", "apps/cli/test/integration/submit/*_test.go"]
+    privileged: true
+    run_slice: ci/pipelinegen/go-db-batch.yml
+
+  # The web app's type check and lint, each a tagged filegroup in
+  # apps/web/BUILD.bazel that names the test target running it.
+  web:
+    tag: slice-web
+    run_slice: ci/pipelinegen/web-batch.yml
+
+  # The end-to-end tests (build tag e2e) that drive the built binaries.
+  e2e:
+    tests: ["apps/cli/test/e2e/*_test.go", "apps/server/test/e2e/*_test.go"]
+    owner: "//apps/cli/cmd/gavel:gavel"
+    extra_deps:
+      - tests: ["apps/server/test/e2e/*_test.go"]
+        deps: ["//apps/server/cmd/gavel-server"]
+    privileged: true
+    run_slice: ci/pipelinegen/e2e-batch.yml
+
+everything_on:
+  - pipelinegen.yaml
+  - MODULE.bazel
+  - .bazelversion
+  - .bazelrc
+  - .bazelignore
+  - go.mod
+  - go.sum
+  - go.work
+  - go.work.sum
+  - tools/go.mod
+  - tools/go.sum
+  - tools/BUILD.bazel
+  - "ci/pipelinegen/**"
+
+untested:
+  - paths: ["examples/**"]
+    reason: separate Bazel workspaces (in .bazelignore) that gavel's onboarding job judges; no test of this workspace reads them
+  - paths: ["docs/**", "**/*.md", LICENSE, glama.json]
+    reason: prose and listings, read by people only
+  - paths: [".github/**", .gitignore, codecov.yml]
+    reason: repository settings and the old CI
+  - paths: [".gavel/**", .golangci.yml]
+    reason: gavel's own quality baseline and lint settings, read when gavel judges itself
+  - paths: [.goreleaser.yaml, hack/release.sh, install.sh, Makefile]
+    reason: release and developer scripts, run by people
+  - paths: [apps/cli/test/e2e/run.sh, apps/server/test/e2e/run.sh, apps/server/test/e2e/devdemo.sh, "apps/server/testdata/**"]
+    reason: scripts and sample data for running the end-to-end tests and a demo by hand
+  - paths: [apps/cli/BUILD.bazel, apps/cli/test/e2e/BUILD.bazel, apps/server/test/e2e/BUILD.bazel, core/domain/iam/model/BUILD.bazel, core/userinterface/api/v1/server/supporting/BUILD.bazel]
+    reason: BUILD files that declare no target
+  - paths: [core/userinterface/api/v1/gen/oapi-codegen.yaml]
+    reason: the generator's settings; what it generates is checked in and tested
