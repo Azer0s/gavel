@@ -31,28 +31,3 @@ filegroup(
     ),
     visibility = ["//visibility:public"],
 )
-
-# pipelinegen: the files pipelinegen.yaml lists as untested. Planning runs
-# every test when a changed file has no Bazel target, so this target owns
-# them; no test depends on it.
-filegroup(
-    name = "untested_files",
-    srcs = glob(
-        [
-            "docs/**",
-            ".github/**",
-            ".gavel/**",
-            "hack/**",
-            "*.md",
-            "LICENSE",
-            "glama.json",
-            "codecov.yml",
-            ".gitignore",
-            ".golangci.yml",
-            ".goreleaser.yaml",
-            "install.sh",
-            "Makefile",
-        ],
-        allow_empty = True,
-    ),
-)
