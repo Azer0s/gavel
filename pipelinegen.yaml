@@ -106,6 +106,9 @@ suites:
       - "core/infrastructure/supporting/search/*_test.go"
       - "apps/cli/test/integration/submit/*_test.go"
     bind: recorded
+    # only Go code runs in these tests: the TypeScript and API correlators
+    # have nothing to see here, and their "can't tell" would bind every slice
+    correlators: [go-correlator]
     run_slice: ci/pipelinegen/go-batch.yml
 
   # Go tests of packages whose tests start PostgreSQL through testcontainers:
@@ -113,6 +116,7 @@ suites:
   go-db:
     tests: ["core/infrastructure/*/postgres/*_test.go", "core/infrastructure/platform/database/*_test.go", "core/infrastructure/platform/sourceblob/*_test.go", "core/infrastructure/supporting/search/*_test.go", "apps/cli/test/integration/submit/*_test.go"]
     bind: recorded
+    correlators: [go-correlator]
     privileged: true
     run_slice: ci/pipelinegen/go-db-batch.yml
 
