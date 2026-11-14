@@ -72,6 +72,9 @@ data=$(mktemp -d "$root/data.XXXX")
 "$pg" slice list | while IFS="$(printf '\t')" read -r name label target sources tests; do
 	"$pg" slice start "$name"
 	mkdir -p "result/$(dirname "$name")" "coverage/$name/gocoverdir"
+	# each spec starts from an empty database, as on a first run: the server
+	# migrates it and creates its first admin, and the spec's setup seeds it
+	docker exec "$container" psql -q -U gavel -d gaveltest -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public" >/dev/null || exit 1
 	GOCOVERDIR=$root/coverage/$name/gocoverdir serve "$data" >"result/$name.server.log" 2>&1 &
 	server=$!
 	up
