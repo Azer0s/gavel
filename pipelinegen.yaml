@@ -128,6 +128,10 @@ suites:
   browser:
     tests: ["apps/web/e2e/*.ts"]
     helpers: ["apps/web/e2e/fixtures.ts", "apps/web/e2e/recording.ts", "apps/web/e2e/global-setup.ts", "apps/web/e2e/global-teardown.ts"]
+    # no Bazel target holds the specs; a recorded suite takes only its owner's
+    # data from the graph, and the app's filegroup has none: the code comes
+    # from the recordings
+    owner: "//apps/web:web"
     bind: recorded
     # a change to how Playwright runs breaks every spec alike: a few tell
     sample_on: [apps/web/playwright.config.ts, apps/web/playwright.pipelinegen.config.ts]
