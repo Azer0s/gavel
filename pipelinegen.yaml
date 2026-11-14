@@ -60,7 +60,7 @@ plugins:
   - name: react
     kind: correlator
     repository: sideways-works/react-correlator
-    release: {version: v0.1.3, sha256: 5705a3d8d81f4e40d6302ec51dcb2cb76dc864a9a24b8fed30efd374852513f4}
+    release: {version: v0.1.4-rc.1, sha256: d45d49d18610e7efcab5956c005ddad725078116994448666ffaaeaacdb6d91f}
     exclude: ["examples/**", "docs/**"]
     config:
       # gavel has no Vite config to read the build from: the browser batch
