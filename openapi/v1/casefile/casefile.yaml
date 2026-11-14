@@ -225,6 +225,14 @@ paths:
       summary: Get a case file by ID
       operationId: getCaseFile
       tags: [casefiles]
+      parameters:
+        - name: include_rulings
+          in: query
+          required: false
+          description: Leave the rulings out of the answer when false.
+          schema:
+            type: boolean
+            default: true
       responses:
         "200":
           description: Case file detail with evidence summaries and rulings.
