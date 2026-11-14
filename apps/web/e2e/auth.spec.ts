@@ -1,5 +1,4 @@
-import { test, expect } from "@playwright/test";
-import { ADMIN_EMAIL, E2E_PASSWORD } from "./fixtures";
+import { test, expect, ADMIN_EMAIL, E2E_PASSWORD } from "./fixtures";
 
 test.describe("Authentication", () => {
   test("redirects unauthenticated users to login", async ({ page }) => {
