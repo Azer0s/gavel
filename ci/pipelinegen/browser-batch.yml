@@ -15,8 +15,6 @@ outputs:
 caches:
   - path: cache
 params:
-  E2E_SERVER_PORT: "3333"
-  GAVEL_PG_PORT: "5433"
   GO_VERSION: "1.25.7"
   REACT_FIXTURE_VERSION: v0.1.4-rc.5
   REACT_FIXTURE_SHA256: 6b70734e23f575fb00b6024f4ff5edcf0f35bb53c13fe2c315a08c66ad295504
