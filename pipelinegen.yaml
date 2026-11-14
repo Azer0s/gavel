@@ -31,7 +31,7 @@ concourse:
     # the Go plugins read the module cache and never download: fill it first
     prepare: go mod download && (cd tools && go mod download)
     bootstrap:
-      release: {version: v0.1.12-rc.2, sha256: d1d05ed4518da1e0c8690c5343779643927b18712808c03c047d1a20e1d57a31}
+      release: {version: v0.1.12-rc.5, sha256: b019442255f4b3b34e54cfdb621889ac4f6c1b1ab1016fc8bea807510bad5bbd}
       bazelisk: {version: v1.30.0, sha256: a248ae2b2b62b5baebb748f6fba7203bff1a27e5d01b55399a8406744cb539e8}
 
 plugins:
@@ -96,7 +96,7 @@ plugins:
   - name: concourse
     kind: runner
     repository: sideways-works/concourse-runner
-    release: {version: v0.1.8-rc.2, sha256: 2a1c098170fcf0e1150ca5a4354b41a7b44166ae2949e69946968552c2583ac1}
+    release: {version: v0.1.8-rc.4, sha256: e92a12e99874d0a181f90678e8ba8851c151b0c5abd73dc600d257bd6e37c816}
 
 suites:
   # Go tests that need nothing but Bazel: one slice per _test.go file.
