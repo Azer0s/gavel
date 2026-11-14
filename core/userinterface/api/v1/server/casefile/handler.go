@@ -91,7 +91,7 @@ func (h *Handler) GetCaseFile(ctx context.Context, req gen.GetCaseFileRequestObj
 	detail, err := h.deps.GetCaseFile.Execute(ctx, q)
 	if err != nil {
 		if apperr.Of(err) == apperr.NotFound {
-			return gen.GetCaseFile404JSONResponse{NotFoundJSONResponse: httpx.NotFound("case file not found")}, nil
+			return gen.GetCaseFile404JSONResponse{NotFoundJSONResponse: httpx.NotFound("no case file with this id")}, nil
 		}
 		return nil, err
 	}
