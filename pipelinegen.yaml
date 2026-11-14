@@ -67,6 +67,13 @@ plugins:
       # builds the bundle into apps/web/dist, and the server serves it at /
       bundles:
         - {dist: apps/web/dist, base: /, html: apps/web/index.html, public: apps/web/public}
+  # The web app's npm packages, read from its pnpm lockfile: the units the
+  # TypeScript correlator links code to when it imports a package.
+  - name: npm
+    kind: sbom
+    repository: sideways-works/npm-sbom
+    release: {version: v0.1.2-rc.1, sha256: 4cd32056426edc44cfbb29e08d9579bbd3ed4ea7f7e84f6d96fb46a47d5916bc}
+    exclude: ["examples/**"]
   # The API contract: each operation of openapi/v1 a unit, and which Go code
   # serves it (oapi-codegen's generated wrapper and gavel's handler), and
   # which operations each browser spec requested.
