@@ -4,9 +4,13 @@
 # apps/web/pnpm-lock.yaml (rules_js), as the build's do.
 set -u
 root=$PWD
+# bazelisk comes with the pipeline's tools; `pipelinegen record` runs the task
+# on your machine, where it is on the PATH
+BAZELISK=$root/tools/bazelisk
+[ -x "$BAZELISK" ] || BAZELISK=bazelisk
 pg=$root/tools/pipelinegen
 tree=$(cd source && pwd -P)
-(cd "$tree" && "$root/tools/bazelisk" --output_user_root="${GAVEL_BAZEL_ROOT:-$root/cache/bazel}" \
+(cd "$tree" && "$BAZELISK" --output_user_root="${GAVEL_BAZEL_ROOT:-$root/cache/bazel}" \
 	build //apps/web:node_modules --jobs=4 --noshow_progress) || exit 1
 [ -e "$tree/apps/web/node_modules" ] || ln -s "$tree/bazel-bin/apps/web/node_modules" "$tree/apps/web/node_modules"
 "$pg" slice setup-end

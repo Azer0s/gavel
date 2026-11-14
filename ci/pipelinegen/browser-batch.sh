@@ -15,13 +15,17 @@
 set -u
 
 root=$PWD
+# bazelisk comes with the pipeline's tools; `pipelinegen record` runs the task
+# on your machine, where it is on the PATH
+BAZELISK=$root/tools/bazelisk
+[ -x "$BAZELISK" ] || BAZELISK=bazelisk
 pg=$root/tools/pipelinegen
 tree=$(cd source && pwd -P)
 pg_port=${GAVEL_PG_PORT:-5433}
 port=${E2E_SERVER_PORT:-3333}
 container=gavel-e2e-postgres
 export PATH=$tree/ci/pipelinegen/bin:$PATH E2E_SERVER_PORT=$port
-bz() { (cd "$tree" && "$root/tools/bazelisk" --output_user_root="${GAVEL_BAZEL_ROOT:-$root/cache/bazel}" "$@"); }
+bz() { (cd "$tree" && "$BAZELISK" --output_user_root="${GAVEL_BAZEL_ROOT:-$root/cache/bazel}" "$@"); }
 mkdir -p result coverage
 
 # PostgreSQL, as gavel's start-server.sh starts it, on the batch's port
@@ -67,6 +71,21 @@ up() { for _ in $(seq 60); do curl -fs "http://127.0.0.1:$port/healthz" >/dev/nu
 
 data=$(mktemp -d "$root/data.XXXX")
 
+# react-correlator's Playwright fixture, which a recording run's specs load.
+# The pipeline fetches the plugins, not this companion file, so the batch
+# fetches it from the plugin's release (pinned by REACT_FIXTURE_VERSION and
+# REACT_FIXTURE_SHA256) unless REACT_CORRELATOR_FIXTURE names one already.
+fixture=${REACT_CORRELATOR_FIXTURE:-$root/tools/react-correlator/playwright.mjs}
+if [ "${PIPELINEGEN_RECORD:-false}" = true ] && [ ! -f "$fixture" ]; then
+	[ -n "${GITHUB_TOKEN:-}" ] || { echo "a recording run needs react-correlator's playwright.mjs: set REACT_CORRELATOR_FIXTURE or give the batch GITHUB_TOKEN" >&2; exit 1; }
+	mkdir -p "$(dirname "$fixture")"
+	url=$(curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" \
+		"https://api.github.com/repos/sideways-works/react-correlator/releases/tags/$REACT_FIXTURE_VERSION" |
+		node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const a=JSON.parse(s).assets.find(a=>a.name==="playwright.mjs");console.log(a?a.url:"")})')
+	curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/octet-stream" -o "$fixture" "$url" || exit 1
+	echo "$REACT_FIXTURE_SHA256  $fixture" | sha256sum -c - || exit 1
+fi
+
 "$pg" slice setup-end
 
 "$pg" slice list | while IFS="$(printf '\t')" read -r name label target sources tests; do
@@ -79,7 +98,7 @@ data=$(mktemp -d "$root/data.XXXX")
 	server=$!
 	up
 	(cd "$tree/apps/web" && PIPELINEGEN_COVERAGE=$root/coverage PIPELINEGEN_TREE=$tree \
-		REACT_CORRELATOR_FIXTURE=$root/tools/react-correlator/playwright.mjs PLAYWRIGHT_JSON=$root/result/$name.playwright.json \
+		REACT_CORRELATOR_FIXTURE=$fixture PLAYWRIGHT_JSON=$root/result/$name.playwright.json \
 		node "$nm/@playwright/test/cli.js" test -c playwright.pipelinegen.config.ts "${name#apps/web/}") >"result/$name.log" 2>&1
 	code=$?
 	kill -TERM "$server"; wait "$server"

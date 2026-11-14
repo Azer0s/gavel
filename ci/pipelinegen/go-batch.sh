@@ -11,9 +11,13 @@
 set -u
 
 root=$PWD
+# bazelisk comes with the pipeline's tools; `pipelinegen record` runs the task
+# on your machine, where it is on the PATH
+BAZELISK=$root/tools/bazelisk
+[ -x "$BAZELISK" ] || BAZELISK=bazelisk
 pg=$root/tools/pipelinegen
 bazel_root=${GAVEL_BAZEL_ROOT:-$root/cache/bazel}
-bz() { (cd "$root/source" && "$root/tools/bazelisk" --output_user_root="$bazel_root" "$@"); }
+bz() { (cd "$root/source" && "$BAZELISK" --output_user_root="$bazel_root" "$@"); }
 
 if [ "${GAVEL_DOCKER:-}" = true ]; then
 	dockerd >"$root/dockerd.log" 2>&1 &

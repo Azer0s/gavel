@@ -147,6 +147,9 @@ suites:
     # a change to how Playwright runs breaks every spec alike: a few tell
     sample_on: [apps/web/playwright.config.ts, apps/web/playwright.pipelinegen.config.ts]
     privileged: true
+    # a recording batch fetches react-correlator's Playwright fixture from
+    # the plugin's release, which takes a token that can read it
+    secrets: {batch: {GITHUB_TOKEN: github_token}}
     run_slice: ci/pipelinegen/browser-batch.yml
 
   # The web app's unit tests (vitest), bound by the Bazel graph: they sit in

@@ -18,14 +18,22 @@ params:
   E2E_SERVER_PORT: "3333"
   GAVEL_PG_PORT: "5433"
   GO_VERSION: "1.25.7"
+  REACT_FIXTURE_VERSION: v0.1.4-rc.5
+  REACT_FIXTURE_SHA256: 6b70734e23f575fb00b6024f4ff5edcf0f35bb53c13fe2c315a08c66ad295504
 run:
   path: bash
   args:
     - -euc
     - |
-      apt-get update -qq && apt-get install -y -qq docker.io curl >/dev/null
-      curl -fsSL "https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz" | tar -C /usr/local -xz
-      export PATH=/usr/local/go/bin:$PATH
-      dockerd >dockerd.log 2>&1 &
-      for _ in $(seq 60); do docker info >/dev/null 2>&1 && break; sleep 1; done
+      # on CI the image lacks Docker and Go; a machine running `pipelinegen
+      # record` has its own and keeps them
+      if ! command -v docker >/dev/null; then
+        apt-get update -qq && apt-get install -y -qq docker.io curl >/dev/null
+        dockerd >dockerd.log 2>&1 &
+        for _ in $(seq 60); do docker info >/dev/null 2>&1 && break; sleep 1; done
+      fi
+      if ! command -v go >/dev/null; then
+        curl -fsSL "https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz" | tar -C /usr/local -xz
+        export PATH=/usr/local/go/bin:$PATH
+      fi
       exec bash source/ci/pipelinegen/browser-batch.sh

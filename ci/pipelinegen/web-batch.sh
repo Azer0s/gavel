@@ -5,8 +5,12 @@
 set -u
 
 root=$PWD
+# bazelisk comes with the pipeline's tools; `pipelinegen record` runs the task
+# on your machine, where it is on the PATH
+BAZELISK=$root/tools/bazelisk
+[ -x "$BAZELISK" ] || BAZELISK=bazelisk
 pg=$root/tools/pipelinegen
-bz() { (cd "$root/source" && "$root/tools/bazelisk" --output_user_root="$root/cache/bazel" "$@"); }
+bz() { (cd "$root/source" && "$BAZELISK" --output_user_root="${GAVEL_BAZEL_ROOT:-$root/cache/bazel}" "$@"); }
 
 "$pg" slice setup-end
 
