@@ -210,7 +210,7 @@ runs:
 # check can't see inside another repository's macro, so it is told here.
 macros:
   "@gavel_tools//macros:web.bzl%web_project":
-    reads: ["src/**", "public/**", index.html, "tsconfig*.json", eslint.config.js, tailwind.config.js]
+    reads: ["src/**/*.ts", "src/**/*.tsx", "src/**/*.css", "public/**", index.html, "tsconfig*.json", eslint.config.js, tailwind.config.js]
     reason: bundles, styles, type-checks and lints the app's sources
 
 everything_on:
@@ -245,6 +245,8 @@ untested:
     reason: release and developer scripts, run by people
   - paths: [apps/web/.gitignore]
     reason: repository settings
+  - paths: ["apps/web/src/assets/**"]
+    reason: images in the source tree that nothing imports and the build doesn't take
   - paths: [apps/web/scripts/generate-tokens.mjs, apps/web/tokens.json]
     reason: the design tokens and the script a person runs to turn them into the checked-in styles
   - paths: [apps/cli/test/e2e/run.sh, apps/server/test/e2e/run.sh, apps/server/test/e2e/devdemo.sh, "apps/server/testdata/**"]
