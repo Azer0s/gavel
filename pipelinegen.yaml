@@ -29,8 +29,16 @@ concourse:
   planner:
     image: {repository: golang, tag: 1.27.1}
     digest: sha256:162be5298a40ed317005c8339c6de4d10d3eef336d66dc8e9259b03ab9d3a6d2
-    # the Go plugins read the module cache and never download: fill it first
-    prepare: go mod download && (cd tools && go mod download)
+    # The TypeScript and React plugins are Node programs, and this image
+    # has no Node: fetch a pinned one (kept in the plan cache, so once per
+    # worker), check it, and put it on the default PATH for the plan step.
+    # Then fill the module cache: the Go plugins read it and never download.
+    prepare: >-
+      v=v24.22.3; f="$npm_config_cache/../node-$v-linux-x64.tar.gz";
+      [ -f "$f" ] || curl -fsSLo "$f" "https://nodejs.org/dist/$v/node-$v-linux-x64.tar.gz";
+      echo "061ec3e3062115705b56b51fa9cc330ab50d34b6969387d4e4b1a50c6809acc2  $f" | sha256sum -c - &&
+      tar -xzf "$f" -C /usr/local --strip-components=1 --no-same-owner "node-$v-linux-x64/bin/node" &&
+      go mod download && (cd tools && go mod download)
     bootstrap:
       release: {version: v0.1.13-rc.3, sha256: 66edcea0dcf23c7ef89b4863a7908c481d96b66133d477e7fd927e5dfc639b96}
       bazelisk: {version: v1.30.0, sha256: a248ae2b2b62b5baebb748f6fba7203bff1a27e5d01b55399a8406744cb539e8}
