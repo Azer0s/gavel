@@ -47,7 +47,7 @@ plugins:
   - name: go-correlator
     kind: correlator
     repository: sideways-works/go-correlator
-    release: {version: v0.1.8-rc.3, sha256: eccaf4792610c3d455c8dd3e18c0cba3d099c9fe4711f95d25288c6a7a6a5242}
+    release: {version: v0.1.8-rc.4, sha256: f654015c7575c528cc3c9059785b7a4262aa0bb6bc6224a5b604fe9e35c5b0a5}
     exclude: ["examples/**"]
   # TypeScript: what exists in the web app and the specs (functions,
   # components, module init) and who ran it, from the browser's and the
