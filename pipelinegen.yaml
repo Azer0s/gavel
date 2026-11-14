@@ -32,7 +32,7 @@ concourse:
     # the Go plugins read the module cache and never download: fill it first
     prepare: go mod download && (cd tools && go mod download)
     bootstrap:
-      release: {version: v0.1.13-rc.2, sha256: 564d3a72a9bc06fa09f08202f5563102dbef83cf4d6dafe4f29c998196ebd02f}
+      release: {version: v0.1.13-rc.3, sha256: 66edcea0dcf23c7ef89b4863a7908c481d96b66133d477e7fd927e5dfc639b96}
       bazelisk: {version: v1.30.0, sha256: a248ae2b2b62b5baebb748f6fba7203bff1a27e5d01b55399a8406744cb539e8}
 
 plugins:
@@ -48,7 +48,7 @@ plugins:
   - name: go-correlator
     kind: correlator
     repository: sideways-works/go-correlator
-    release: {version: v0.1.8-rc.7, sha256: c690101e7c5fb031bbb729d7c9e827f9d3ef0e6808540fc53cb14e216cfa930d}
+    release: {version: v0.1.8-rc.8, sha256: c8b222ce777dc84f33a2097a3afc2ceca930468443d3291ae55ac6ce203b4fe1}
     exclude: ["examples/**"]
   # TypeScript: what exists in the web app and the specs (functions,
   # components, module init) and who ran it, from the browser's and the
@@ -97,7 +97,7 @@ plugins:
   - name: concourse
     kind: runner
     repository: sideways-works/concourse-runner
-    release: {version: v0.1.8-rc.4, sha256: e92a12e99874d0a181f90678e8ba8851c151b0c5abd73dc600d257bd6e37c816}
+    release: {version: v0.1.9-rc.1, sha256: ca769f67e37a0d7ed53ef850e313a7051140c3dcb61930f33c8c5e4bfed57d94}
 
 suites:
   # Go tests that need nothing but Bazel: one slice per _test.go file.
