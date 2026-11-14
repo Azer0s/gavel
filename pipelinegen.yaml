@@ -40,14 +40,14 @@ plugins:
   - name: go-sbom
     kind: sbom
     repository: sideways-works/go-sbom
-    release: {version: v0.1.3-rc.1, sha256: 45a8be5af1f6096389ccf22cd82d63a8c86e54defcc664d4bcce00b21d59ecb6}
+    release: {version: v0.1.3-rc.2, sha256: c9d41348c96c8dbd8cb67c4f8f797fac6e2f191dba8a3cbd8a4766d190321b26}
     exclude: ["examples/**"]
   # Who uses what: links between declarations, and which declarations each
   # test file ran, read from the coverage the batch leaves.
   - name: go-correlator
     kind: correlator
     repository: sideways-works/go-correlator
-    release: {version: v0.1.8-rc.2, sha256: 28d1eff041c5f0321409bf38ad49f539e3d93b7d8cca59ed62ac909abc6be2ab}
+    release: {version: v0.1.8-rc.3, sha256: eccaf4792610c3d455c8dd3e18c0cba3d099c9fe4711f95d25288c6a7a6a5242}
     exclude: ["examples/**"]
   # TypeScript: what exists in the web app and the specs (functions,
   # components, module init) and who ran it, from the browser's and the
@@ -73,7 +73,7 @@ plugins:
   - name: openapi
     kind: sbom
     repository: sideways-works/openapi-sbom
-    release: {version: v0.1.2-rc.1, sha256: e25fe19090d1cd1120d8f53e22d99e18cd772cce491b381dc111c4bf3722cdf7}
+    release: {version: v0.1.2-rc.2, sha256: 5c7ff41ef6624ec7af80766c1ac63e9d8ff61e196dcfda57119303476a90b4bb}
     exclude: ["examples/**", "docs/**", ".github/**"]
   - name: api-uses
     kind: correlator
