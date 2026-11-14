@@ -80,3 +80,14 @@ filegroup(
         "slice-web",
     ],
 )
+
+# pipelinegen: what every browser spec shares (the fixtures, the global
+# setup that seeds the database, the recording helper). It is the browser
+# suite's owner, so a change to one of these files runs every spec.
+filegroup(
+    name = "e2e_shared",
+    data = glob(
+        ["e2e/**"],
+        exclude = ["e2e/*.spec.ts"],
+    ),
+)

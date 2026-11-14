@@ -132,10 +132,10 @@ suites:
   browser:
     tests: ["apps/web/e2e/*.ts"]
     helpers: ["apps/web/e2e/fixtures.ts", "apps/web/e2e/recording.ts", "apps/web/e2e/global-setup.ts", "apps/web/e2e/global-teardown.ts"]
-    # no Bazel target holds the specs; a recorded suite takes only its owner's
-    # data from the graph, and the app's filegroup has none: the code comes
-    # from the recordings
-    owner: "//apps/web:web"
+    # no Bazel target holds the specs: their owner is a filegroup whose data
+    # is what every spec shares. A recorded suite takes only its owner's data
+    # from the graph; the code the specs ran comes from the recordings
+    owner: "//apps/web:e2e_shared"
     bind: recorded
     # a change to how Playwright runs breaks every spec alike: a few tell
     sample_on: [apps/web/playwright.config.ts, apps/web/playwright.pipelinegen.config.ts]
@@ -147,6 +147,8 @@ suites:
   vitest:
     tests: ["apps/web/src/**/*.test.ts", "apps/web/src/**/*.test.tsx"]
     owner: "//apps/web:web"
+    # how vitest runs breaks every test file alike: a few tell
+    sample_on: [apps/web/vitest.config.ts]
     run_slice: ci/pipelinegen/vitest-batch.yml
 
   # The end-to-end tests (build tag e2e) that drive the built binaries.
@@ -192,6 +194,14 @@ runs:
     suites: {go: {}, go-db: {}, web: {}, browser: {}, vitest: {}, e2e: {}}
     record: true
 
+# The web app's BUILD file calls web_project, a macro from gavel's own
+# module registry (gavel_tools), which globs the app's files itself. The
+# check can't see inside another repository's macro, so it is told here.
+macros:
+  "@gavel_tools//macros:web.bzl%web_project":
+    reads: ["src/**", "public/**", index.html, "tsconfig*.json", eslint.config.js, tailwind.config.js]
+    reason: bundles, styles, type-checks and lints the app's sources
+
 everything_on:
   - pipelinegen.yaml
   - MODULE.bazel
@@ -205,6 +215,10 @@ everything_on:
   - tools/go.mod
   - tools/go.sum
   - tools/BUILD.bazel
+  # the web app's npm packages: Bazel installs them from this lockfile for
+  # the app, the vitest files and the browser specs alike
+  - apps/web/package.json
+  - apps/web/pnpm-lock.yaml
   - "ci/pipelinegen/**"
 
 untested:
@@ -218,8 +232,10 @@ untested:
     reason: gavel's own quality baseline and lint settings, read when gavel judges itself
   - paths: [.goreleaser.yaml, hack/release.sh, install.sh, Makefile]
     reason: release and developer scripts, run by people
-  - paths: [apps/web/e2e/start-server.sh]
-    reason: how a person starts the browser specs by hand; the browser batch starts the server itself
+  - paths: [apps/web/.gitignore]
+    reason: repository settings
+  - paths: [apps/web/scripts/generate-tokens.mjs, apps/web/tokens.json]
+    reason: the design tokens and the script a person runs to turn them into the checked-in styles
   - paths: [apps/cli/test/e2e/run.sh, apps/server/test/e2e/run.sh, apps/server/test/e2e/devdemo.sh, "apps/server/testdata/**"]
     reason: scripts and sample data for running the end-to-end tests and a demo by hand
   - paths: [apps/cli/BUILD.bazel, apps/cli/test/e2e/BUILD.bazel, apps/server/test/e2e/BUILD.bazel, core/domain/iam/model/BUILD.bazel, core/userinterface/api/v1/server/supporting/BUILD.bazel]
