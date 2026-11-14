@@ -8,12 +8,13 @@ bazel:
 # where the run state lives (hidden refs of this repository).
 github:
   repository: Azer0s/gavel
-  token: github_token            # the name of a Concourse var, never the token
-
-# The run state lives in hidden refs (the default). The store's branch name
-# matters only with `store.backend: branch`, but it must not be a branch a
-# run starts from, and this fork's runs start from a branch called pipelinegen.
-store: {branch: pipelinegen-store}
+  # the names of Concourse vars, never the tokens. A step gets only the
+  # token of what it does: read fetches the code and the releases of
+  # pipelinegen and its plugins, and is the only one a task running a
+  # change's own scripts may hold; the others write statuses, the comment
+  # and the records, on this repository only
+  token: github_token
+  tokens: {read: github_read_token, changes: github_token, report: github_token, store: github_token}
 
 # --- Concourse: what the generated pipeline needs. The web address is left
 # out on purpose: whoever generates the pipeline gives it in
@@ -31,7 +32,7 @@ concourse:
     # the Go plugins read the module cache and never download: fill it first
     prepare: go mod download && (cd tools && go mod download)
     bootstrap:
-      release: {version: v0.1.12-rc.5, sha256: b019442255f4b3b34e54cfdb621889ac4f6c1b1ab1016fc8bea807510bad5bbd}
+      release: {version: v0.1.13-rc.2, sha256: 564d3a72a9bc06fa09f08202f5563102dbef83cf4d6dafe4f29c998196ebd02f}
       bazelisk: {version: v1.30.0, sha256: a248ae2b2b62b5baebb748f6fba7203bff1a27e5d01b55399a8406744cb539e8}
 
 plugins:
@@ -40,14 +41,14 @@ plugins:
   - name: go-sbom
     kind: sbom
     repository: sideways-works/go-sbom
-    release: {version: v0.1.3-rc.2, sha256: c9d41348c96c8dbd8cb67c4f8f797fac6e2f191dba8a3cbd8a4766d190321b26}
+    release: {version: v0.1.3-rc.3, sha256: fd95aa5ad762e5fb145e16aff50c608d7b43969a01509106dc70a7de8f64573f}
     exclude: ["examples/**"]
   # Who uses what: links between declarations, and which declarations each
   # test file ran, read from the coverage the batch leaves.
   - name: go-correlator
     kind: correlator
     repository: sideways-works/go-correlator
-    release: {version: v0.1.8-rc.5, sha256: db74a6c5590228715d29b2deb032bce5358f7dd8122b912f2c3f822cb5ff8399}
+    release: {version: v0.1.8-rc.7, sha256: c690101e7c5fb031bbb729d7c9e827f9d3ef0e6808540fc53cb14e216cfa930d}
     exclude: ["examples/**"]
   # TypeScript: what exists in the web app and the specs (functions,
   # components, module init) and who ran it, from the browser's and the
@@ -55,12 +56,12 @@ plugins:
   - name: ts
     kind: sbom
     repository: sideways-works/ts-sbom
-    release: {version: v0.1.2, sha256: 77ae6ca7d86c5e5a0a43f4194118326f130496c67626d2fa5b061e5878123a2f}
+    release: {version: v0.1.3-rc.1, sha256: 844e67ef1108d7e25cecddca9c487a267929946ffd57e76ad7afcb3132988915}
     exclude: ["examples/**", "docs/**"]
   - name: react
     kind: correlator
     repository: sideways-works/react-correlator
-    release: {version: v0.1.4-rc.5, sha256: ff7ce370f4d3db707d41dc9be91a5607c8fd77f7188c39d445cd1002f2562ca1}
+    release: {version: v0.1.4-rc.12, sha256: f57e217fb7e9b03ad6ff0f532ad819642b1da75d21d65f3d0ed1f8846b1a3efe}
     exclude: ["examples/**", "docs/**"]
     config:
       # gavel has no Vite config to read the build from: the browser batch
@@ -72,7 +73,7 @@ plugins:
   - name: npm
     kind: sbom
     repository: sideways-works/npm-sbom
-    release: {version: v0.1.2-rc.1, sha256: 4cd32056426edc44cfbb29e08d9579bbd3ed4ea7f7e84f6d96fb46a47d5916bc}
+    release: {version: v0.1.2-rc.2, sha256: 63fd411fd3d6e48ad362f781209c51545c28ad18896b81f2ccf15f45b1e11cd0}
     exclude: ["examples/**"]
   # The API contract: each operation of openapi/v1 a unit, and which Go code
   # serves it (oapi-codegen's generated wrapper and gavel's handler), and
@@ -80,7 +81,7 @@ plugins:
   - name: openapi
     kind: sbom
     repository: sideways-works/openapi-sbom
-    release: {version: v0.1.2-rc.2, sha256: 5c7ff41ef6624ec7af80766c1ac63e9d8ff61e196dcfda57119303476a90b4bb}
+    release: {version: v0.1.2-rc.3, sha256: 2a0727feece7a5bb16c976d38f5a4711cdffb8c72884ee530cfa65289e247427}
     exclude: ["examples/**", "docs/**", ".github/**"]
   - name: api-uses
     kind: correlator
@@ -149,7 +150,7 @@ suites:
     privileged: true
     # a recording batch fetches react-correlator's Playwright fixture from
     # the plugin's release, which takes a token that can read it
-    secrets: {batch: {GITHUB_TOKEN: github_token}}
+    secrets: {batch: {GITHUB_TOKEN: github_read_token}}
     run_slice: ci/pipelinegen/browser-batch.yml
 
   # The web app's unit tests (vitest), bound by the Bazel graph: they sit in
@@ -216,18 +217,16 @@ macros:
     reads: ["src/**/*.ts", "src/**/*.tsx", "src/**/*.css", "public/**", index.html, "tsconfig*.json", eslint.config.js, tailwind.config.js]
     reason: bundles, styles, type-checks and lints the app's sources
 
+# go.mod, go.sum, go.work and tools/go.* are not here: go-sbom claims them
+# and lists each module as a unit, so a bump runs the slices whose code
+# links the bumped module, and the graph-bound suites through Bazel's
+# go_deps.
 everything_on:
   - pipelinegen.yaml
   - MODULE.bazel
   - .bazelversion
   - .bazelrc
   - .bazelignore
-  - go.mod
-  - go.sum
-  - go.work
-  - go.work.sum
-  - tools/go.mod
-  - tools/go.sum
   - tools/BUILD.bazel
   # the web app's npm packages: Bazel installs them from this lockfile for
   # the app, the vitest files and the browser specs alike
