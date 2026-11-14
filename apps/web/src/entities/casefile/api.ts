@@ -24,6 +24,6 @@ export async function listCaseFiles(
 }
 
 export async function getCaseFile(id: string): Promise<CaseFile> {
-  const dto = await request<CaseFileDTO>(v1Path(`/casefiles/${id}`));
+  const dto = await request<CaseFileDTO>(v1Path(`/casefiles/${encodeURIComponent(id)}`));
   return toCaseFile(dto);
 }
