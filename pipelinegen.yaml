@@ -47,7 +47,7 @@ plugins:
   - name: go-correlator
     kind: correlator
     repository: sideways-works/go-correlator
-    release: {version: v0.1.8-rc.4, sha256: f654015c7575c528cc3c9059785b7a4262aa0bb6bc6224a5b604fe9e35c5b0a5}
+    release: {version: v0.1.8-rc.5, sha256: db74a6c5590228715d29b2deb032bce5358f7dd8122b912f2c3f822cb5ff8399}
     exclude: ["examples/**"]
   # TypeScript: what exists in the web app and the specs (functions,
   # components, module init) and who ran it, from the browser's and the
@@ -60,7 +60,7 @@ plugins:
   - name: react
     kind: correlator
     repository: sideways-works/react-correlator
-    release: {version: v0.1.4-rc.4, sha256: a24430b1067276c8b3202204af2a9f73ecd80aa46b9fa726510296ba1e79d3ed}
+    release: {version: v0.1.4-rc.5, sha256: ff7ce370f4d3db707d41dc9be91a5607c8fd77f7188c39d445cd1002f2562ca1}
     exclude: ["examples/**", "docs/**"]
     config:
       # gavel has no Vite config to read the build from: the browser batch
