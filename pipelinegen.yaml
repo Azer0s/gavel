@@ -73,12 +73,12 @@ plugins:
   - name: openapi
     kind: sbom
     repository: sideways-works/openapi-sbom
-    release: {version: v0.1.1, sha256: 2900f5c40ce1306d9fc08050a91a2f9555b81f6cdb93ab4808367fc5b558c13f}
+    release: {version: v0.1.2-rc.1, sha256: e25fe19090d1cd1120d8f53e22d99e18cd772cce491b381dc111c4bf3722cdf7}
     exclude: ["examples/**", "docs/**", ".github/**"]
   - name: api-uses
     kind: correlator
     repository: sideways-works/oapi-codegen-correlator
-    release: {version: v0.1.4, sha256: 5840bdb45a8762bc7a423bcc4554606f824b887e357c1644a6d40e48443091d7}
+    release: {version: v0.1.5-rc.1, sha256: ae24f130f54fae4cddda0b97de588a27b629af917e3644a6bb838e69e98dc215}
     exclude: ["examples/**"]
     config:
       documents:
