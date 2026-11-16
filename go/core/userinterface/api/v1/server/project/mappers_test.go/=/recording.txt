@@ -1,0 +1,5 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/api/v1/server/httpx#func:ParseUUIDOrZero
+go:core/userinterface/api/v1/server/project#func:ProjectDetailFromView
+go:core/userinterface/api/v1/server/project#func:nonNilStrings

@@ -1,0 +1,9 @@
+# observed
+go:core/domain/gavelspace/model#func:NewProjectRef
+go:core/domain/gavelspace/model#method:ProjectRef.ID
+go:core/domain/gavelspace/model#method:ProjectRef.TargetPattern
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/project/model#func:NewProjectID
+go:core/domain/project/model#method:ProjectID.Equal
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

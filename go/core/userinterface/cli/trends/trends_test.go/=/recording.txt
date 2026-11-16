@@ -1,0 +1,23 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/api/v1/client#func:New
+go:core/userinterface/api/v1/client#method:Client.ListProjectCaseFiles
+go:core/userinterface/api/v1/gen#func:NewClient
+go:core/userinterface/api/v1/gen#func:NewClientWithResponses
+go:core/userinterface/api/v1/gen#func:NewListProjectCaseFilesRequest
+go:core/userinterface/api/v1/gen#func:ParseListProjectCaseFilesResponse
+go:core/userinterface/api/v1/gen#func:WithRequestEditorFn
+go:core/userinterface/api/v1/gen#method:Client.ListProjectCaseFiles
+go:core/userinterface/api/v1/gen#method:Client.applyEditors
+go:core/userinterface/api/v1/gen#method:ClientWithResponses.ListProjectCaseFilesWithResponse
+go:core/userinterface/api/v1/gen#method:ListProjectCaseFilesResponse.StatusCode
+go:core/userinterface/cli/trends#func:NewCommand
+go:core/userinterface/cli/trends#func:RegisterFlags
+go:core/userinterface/cli/trends#func:directionArrow
+go:core/userinterface/cli/trends#func:envOrDefault
+go:core/userinterface/cli/trends#func:filterByBranch
+go:core/userinterface/cli/trends#func:run
+go:core/userinterface/cli/trends#func:timeAgo
+go:core/userinterface/cli/trends#func:writeJSON
+go:core/userinterface/cli/trends#func:writeSummary
+go:core/userinterface/cli/trends#func:writeTable

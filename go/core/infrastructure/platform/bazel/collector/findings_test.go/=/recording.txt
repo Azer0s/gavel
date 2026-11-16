@@ -1,0 +1,18 @@
+# observed
+go:core/application/casefile/ingestfindings#func:NewCommand
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/casefile/model/evidence#func:NewSubtype
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/infrastructure/platform/bazel/catalog#func:IsArchtestAspect
+go:core/infrastructure/platform/bazel/catalog#func:ParseCatalog
+go:core/infrastructure/platform/bazel/catalog#func:SelectedAspects
+go:core/infrastructure/platform/bazel/catalog#func:active
+go:core/infrastructure/platform/bazel/catalog#func:loadEmbedded
+go:core/infrastructure/platform/bazel/catalog#method:Catalog.aspectFor
+go:core/infrastructure/platform/bazel/catalog#method:Catalog.selectedAspects
+go:core/infrastructure/platform/bazel/collector#func:NewBazelFindingsCollector
+go:core/infrastructure/platform/bazel/collector#method:BazelFindingsCollector.CollectFindings
+go:core/infrastructure/platform/bazel/runner#func:ExtractToolName
+go:core/infrastructure/platform/bazel/runner#func:SARIFReportsFromResult
+go:core/infrastructure/platform/bazel/runner#func:ToolsWithoutSubmissions
