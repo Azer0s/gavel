@@ -1,0 +1,14 @@
+{
+  "label": "apps/web/e2e/tokens.spec.ts",
+  "state": "errored",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-browser",
+  "updated": "2026-11-16T19:15:47.87390765Z",
+  "failures": [
+    {
+      "test": "(recording)",
+      "tail": "observe: plugin failed: react observe: exit status 127: env: 'node': No such file or directory"
+    }
+  ],
+  "seconds": 2.9419999999999997,
+  "recorded": true
+}
