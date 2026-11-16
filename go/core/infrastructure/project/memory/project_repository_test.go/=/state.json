@@ -1,0 +1,14 @@
+{
+  "label": "core/infrastructure/project/memory/project_repository_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go",
+  "updated": "2026-11-16T18:37:47.35060007Z",
+  "failures": [
+    {
+      "test": "TestProjectRepositorySaveReturnsErrorWhenBaselineStoreFails",
+      "tail": "=== RUN   TestProjectRepositorySaveReturnsErrorWhenBaselineStoreFails\n    project_repository_test.go:220: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/project/memory/project_repository_test.go:220\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestProjectRepositorySaveReturnsErrorWhenBaselineStoreFails\n--- FAIL: TestProjectRepositorySaveReturnsErrorWhenBaselineStoreFails (0.00s)"
+    }
+  ],
+  "seconds": 0.911699573,
+  "recorded": true
+}
