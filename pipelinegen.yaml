@@ -106,6 +106,11 @@ plugins:
     kind: runner
     repository: sideways-works/pipelinegen-runner-concourse
     release: {version: v0.1.9-rc.10, sha256: bf8c8063ffafdaffaf1773db9fe19b9a85851a5bfff470053b97a871d9cf2ba2}
+    config:
+      placement:
+        # every step of this pipeline, the resources' checks included, on
+        # the workers tagged cloud-2
+        default: [cloud-2]
 
 suites:
   # Go tests that need nothing but Bazel: one slice per _test.go file.
