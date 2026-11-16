@@ -511,6 +511,8 @@ macros:
 # by what it means for the tests.
 everything_on:
   - MODULE.bazel
+  # MODULE.bazel includes it: build setup like MODULE.bazel itself
+  - .gavel/gavel.MODULE.bazel
   - .bazelversion
   - .bazelrc
   - .bazelignore
@@ -530,8 +532,8 @@ untested:
     reason: prose and listings, read by people only
   - paths: [".github/**", .gitignore, codecov.yml]
     reason: repository settings and the old CI
-  - paths: [".gavel/**", .golangci.yml]
-    reason: gavel's own quality baseline and lint settings, read when gavel judges itself
+  - paths: [.gavel/architecture.yml, ".gavel/baseline/**", .gavel/gavel.bazelrc, .gavel/gavel.yaml, .golangci.yml]
+    reason: gavel's own quality baseline and lint settings, read when gavel judges itself; .bazelrc imports gavel.bazelrc, which holds only named configs a plain bazel test doesn't use
   - paths: [.goreleaser.yaml, hack/release.sh, install.sh, Makefile]
     reason: release and developer scripts, run by people
   - paths: [apps/web/.gitignore]
