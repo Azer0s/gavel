@@ -375,8 +375,10 @@ suites:
             docker run -d --name "$c" -e POSTGRES_USER=gavel -e POSTGRES_PASSWORD=gavel -e POSTGRES_DB=gaveltest \
               -p 127.0.0.1::5432 postgres:16-alpine >/dev/null
             echo "$c" >"$w/container"
+            # over TCP: the image's first start runs a server on the socket
+            # alone while it creates the database, then restarts it
             i=0
-            until docker exec "$c" pg_isready -U gavel -d gaveltest >/dev/null 2>&1; do
+            until docker exec "$c" pg_isready -h 127.0.0.1 -U gavel -d gaveltest >/dev/null 2>&1; do
               i=$((i + 1))
               [ "$i" -lt 60 ] || { docker logs "$c" | tail -20; exit 1; }
               sleep 1
@@ -430,6 +432,7 @@ suites:
             i=0
             until node -e 'fetch(process.argv[1]).then(r=>process.exit(r.ok?0:1),()=>process.exit(1))' "http://127.0.0.1:$port/healthz"; do
               i=$((i + 1))
+              kill -0 "$(cat "$w/pid")" 2>/dev/null || { echo "the server exited:" >&2; tail -20 "$w/server.log" >&2; exit 1; }
               [ "$i" -lt 60 ] || { tail -20 "$w/server.log"; exit 1; }
               sleep 1
             done
