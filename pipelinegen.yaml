@@ -172,14 +172,70 @@ suites:
           must_run:
             apps/cli/test/integration/clispec/clispec_test.go: "^Test(AllSpecCommandsExistInBinary|AllBinaryCommandsDocumentedInSpec|AllSpecFlagsExistInBinary|AllBinaryFlagsDocumentedInSpec|FlagTypesMatchSpec|FlagShortAliasesMatchSpec|GlobalFlagsExistInBinary|UnknownFlagRejected)$"
 
-  # Go tests of packages whose tests start PostgreSQL through testcontainers:
-  # their batches start a Docker daemon of their own.
+  # Go tests of packages whose tests start PostgreSQL through
+  # testcontainers: their batches start a Docker daemon of their own, and a
+  # test that skips because none answers fails its file.
   go-db:
     tests: ["core/infrastructure/*/postgres/*_test.go", "core/infrastructure/platform/database/*_test.go", "core/infrastructure/platform/sourceblob/*_test.go", "core/infrastructure/supporting/search/*_test.go", "apps/cli/test/integration/submit/*_test.go"]
     bind: recorded
     correlators: [go-correlator]
     privileged: true
-    run_slice: ci/pipelinegen/go-db-batch.yml
+    image: golang
+    params:
+      GOFLAGS: -trimpath
+      GOCACHE: "{cache}/go-build"
+      GOMODCACHE: "{cache}/mod"
+      # Each test file is a go test process of its own, and each process a
+      # testcontainers session: the reaper of one would remove the
+      # database container the next one reuses by name. The batch's own
+      # daemon, and the set-up's stop, end the container instead.
+      TESTCONTAINERS_RYUK_DISABLED: "true"
+    steps:
+      - setup: shell
+        with:
+          timeout: 10m
+          script: |
+            if ! docker info >/dev/null 2>&1; then
+              command -v dockerd >/dev/null || { apt-get update -qq && apt-get install -y -qq docker.io >/dev/null; }
+              setsid dockerd >"$PIPELINEGEN_WORK/dockerd.log" 2>&1 &
+              echo $! >"$PIPELINEGEN_WORK/dockerd.pid"
+              i=0
+              until docker info >/dev/null 2>&1; do
+                i=$((i + 1))
+                [ "$i" -lt 60 ] || { tail -20 "$PIPELINEGEN_WORK/dockerd.log"; exit 1; }
+                sleep 1
+              done
+            fi
+          stop: |
+            [ -f "$PIPELINEGEN_WORK/dockerd.pid" ] || exit 0
+            docker ps -aq --filter label=org.testcontainers=true | xargs -r docker rm -f >/dev/null
+            kill "$(cat "$PIPELINEGEN_WORK/dockerd.pid")"
+            i=0
+            while kill -0 "$(cat "$PIPELINEGEN_WORK/dockerd.pid")" 2>/dev/null && [ "$i" -lt 8 ]; do i=$((i + 1)); sleep 1; done
+      - run: go
+        with:
+          timeout: 15m
+          cache_mb: 4096
+          modcache_mb: 3072
+          must_run:
+            apps/cli/test/integration/submit/submit_e2e_test.go: "."
+            core/infrastructure/casefile/postgres/case_file_repository_integration_test.go: "."
+            core/infrastructure/casefile/postgres/error_paths_integration_test.go: "."
+            core/infrastructure/casefile/postgres/file_coverage_integration_test.go: "."
+            core/infrastructure/casefile/postgres/query_finders_integration_test.go: "."
+            core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go: "."
+            core/infrastructure/iam/postgres/integration_test.go: "."
+            core/infrastructure/iam/postgres/tenant_provisioner_integration_test.go: "."
+            core/infrastructure/platform/database/connection_integration_test.go: "."
+            core/infrastructure/platform/database/db_test.go: "."
+            core/infrastructure/platform/database/escape_test.go: "."
+            core/infrastructure/platform/database/seed_integration_test.go: "."
+            core/infrastructure/platform/sourceblob/storage_integration_test.go: "."
+            core/infrastructure/pleading/postgres/pleading_finder_integration_test.go: "."
+            core/infrastructure/pleading/postgres/pleading_repository_integration_test.go: "."
+            core/infrastructure/project/postgres/project_repository_integration_test.go: "."
+            core/infrastructure/project/postgres/query_finder_integration_test.go: "."
+            core/infrastructure/supporting/search/finder_integration_test.go: "."
 
   # The web app's type check and lint, each a tagged filegroup in
   # apps/web/BUILD.bazel that names the Bazel test target running it.
