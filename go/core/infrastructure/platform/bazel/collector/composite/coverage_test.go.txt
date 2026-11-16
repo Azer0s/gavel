@@ -1,0 +1,5 @@
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/bazel/collector/composite#func:NewCoverageCollector
+go:core/infrastructure/platform/bazel/collector/composite#func:hasTypeScript
+go:core/infrastructure/platform/bazel/collector/composite#func:hasUsefulCoverage
+go:core/infrastructure/platform/bazel/collector/composite#method:CoverageCollector.CollectCoverage

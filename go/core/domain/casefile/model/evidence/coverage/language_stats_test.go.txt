@@ -1,0 +1,8 @@
+go:core/domain/casefile/model/evidence/coverage#func:NewLanguage
+go:core/domain/casefile/model/evidence/coverage#func:NewLanguageStats
+go:core/domain/casefile/model/evidence/coverage#method:LanguageStats.CoveredLines
+go:core/domain/casefile/model/evidence/coverage#method:LanguageStats.Language
+go:core/domain/casefile/model/evidence/coverage#method:LanguageStats.Percent
+go:core/domain/casefile/model/evidence/coverage#method:LanguageStats.TotalLines
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

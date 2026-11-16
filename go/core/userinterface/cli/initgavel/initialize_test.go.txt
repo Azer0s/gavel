@@ -1,0 +1,17 @@
+go:core/userinterface/cli/initgavel#func:NewCommand
+go:core/userinterface/cli/initgavel#func:RegisterFlags
+go:core/userinterface/cli/initgavel#func:copyConfig
+go:core/userinterface/cli/initgavel#func:execute
+go:core/userinterface/cli/initgavel#func:extractTooling
+go:core/userinterface/cli/initgavel#func:fileStatus
+go:core/userinterface/cli/initgavel#func:pickLayers
+go:core/userinterface/cli/initgavel#func:printProjectSummary
+go:core/userinterface/cli/initgavel#func:readFromConfig
+go:core/userinterface/cli/initgavel#func:renderArchitectureYAML
+go:core/userinterface/cli/initgavel#func:resolveAbsConfigPath
+go:core/userinterface/cli/initgavel#func:run
+go:core/userinterface/cli/initgavel#func:writeArchitectureConfig
+go:core/userinterface/cli/ui#func:Header
+go:core/userinterface/cli/ui#func:PhaseHeader
+go:core/userinterface/cli/ui#func:PhaseItem
+go:core/userinterface/cli/ui#func:Verdict

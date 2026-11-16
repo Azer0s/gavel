@@ -1,0 +1,5 @@
+go:core/domain/casefile/model/evidence/finding#func:NewSeverity
+go:core/domain/casefile/model/evidence/finding#method:Severity.Equal
+go:core/domain/casefile/model/evidence/finding#method:Severity.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

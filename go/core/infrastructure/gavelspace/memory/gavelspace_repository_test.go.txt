@@ -1,0 +1,13 @@
+go:core/domain/gavelspace/model#func:NewGavelspace
+go:core/domain/gavelspace/model#func:NewGavelspaceID
+go:core/domain/gavelspace/model#method:Gavelspace.ID
+go:core/domain/gavelspace/model#method:Gavelspace.TenantID
+go:core/domain/gavelspace/model#method:GavelspaceID.String
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#method:TenantID.IsZero
+go:core/domain/iam/model/tenant#method:TenantID.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/infrastructure/gavelspace/memory#func:NewGavelspaceRepository
+go:core/infrastructure/gavelspace/memory#method:GavelspaceRepository.FindByName
+go:core/infrastructure/gavelspace/memory#method:GavelspaceRepository.Save
