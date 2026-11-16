@@ -1,0 +1,9 @@
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/database#func:BoolToInt
+go:core/infrastructure/platform/database#func:EscapeLike
+go:core/infrastructure/platform/database#func:NewDB
+go:core/infrastructure/platform/database#func:Now
+go:core/infrastructure/platform/database#func:NullString
+go:core/infrastructure/platform/database#func:NullableString
+go:core/infrastructure/platform/database#func:ParseTime
+go:core/infrastructure/platform/database#method:DB.Rebind

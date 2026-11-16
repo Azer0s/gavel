@@ -1,0 +1,4 @@
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#func:Of
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/domain/shared/failure#method:sentinel.Kind

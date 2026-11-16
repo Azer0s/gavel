@@ -1,0 +1,5 @@
+go:core/application/pleading/resolve#func:NewCommand
+go:core/application/pleading/resolve#method:Command.Outcome
+go:core/application/pleading/resolve#method:Command.PleadingID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

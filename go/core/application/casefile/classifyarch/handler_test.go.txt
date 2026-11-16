@@ -1,0 +1,12 @@
+go:core/application/casefile/classifyarch#func:NewCommand
+go:core/application/casefile/classifyarch#func:NewHandler
+go:core/application/casefile/classifyarch#func:copyStrings
+go:core/application/casefile/classifyarch#method:Command.CurrentIDs
+go:core/application/casefile/classifyarch#method:Command.PreviousIDs
+go:core/application/casefile/classifyarch#method:Handler.Execute
+go:core/domain/casefile/model/tracking#func:ClassifyIdentifiers
+go:core/domain/casefile/model/tracking#method:IdentifierResult.ExistingCount
+go:core/domain/casefile/model/tracking#method:IdentifierResult.NewCount
+go:core/domain/casefile/model/tracking#method:IdentifierResult.NewIdentifiers
+go:core/domain/casefile/model/tracking#method:IdentifierResult.ResolvedCount
+go:core/domain/shared/failure#func:New

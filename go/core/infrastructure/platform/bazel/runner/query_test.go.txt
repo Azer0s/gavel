@@ -1,0 +1,5 @@
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/bazel/runner#func:NewBazelTargetQuery
+go:core/infrastructure/platform/bazel/runner#func:parseQueryLabels
+go:core/infrastructure/platform/bazel/runner#func:queryTargetsOfKind
+go:core/infrastructure/platform/bazel/runner#method:BazelTargetQuery.QueryTargetsOfKind

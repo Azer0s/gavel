@@ -1,0 +1,9 @@
+go:core/application/supporting/search#func:NewHandler
+go:core/application/supporting/search#func:NewQuery
+go:core/application/supporting/search#method:Handler.Execute
+go:core/application/supporting/search#method:Query.Limit
+go:core/application/supporting/search#method:Query.Text
+go:core/domain/shared/failure#func:New
+go:core/userinterface/api/v1/server/supporting/search#func:New
+go:core/userinterface/api/v1/server/supporting/search#func:resultFromQuery
+go:core/userinterface/api/v1/server/supporting/search#method:Handler.Search

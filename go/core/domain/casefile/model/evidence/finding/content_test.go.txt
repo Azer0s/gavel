@@ -1,0 +1,9 @@
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/casefile/model/evidence/finding#func:NewContent
+go:core/domain/casefile/model/evidence/finding#func:NewFinding
+go:core/domain/casefile/model/evidence/finding#func:NewFingerprintID
+go:core/domain/casefile/model/evidence/finding#method:Content.Findings
+go:core/domain/casefile/model/evidence/finding#method:Content.Merge
+go:core/domain/casefile/model/evidence/finding#method:Finding.ID
+go:core/domain/casefile/model/evidence/finding#method:FingerprintID.Value
+go:core/domain/shared/failure#func:New

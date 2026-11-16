@@ -1,0 +1,14 @@
+go:core/application/pleading/list#func:NewHandler
+go:core/application/pleading/list#func:NewQuery
+go:core/application/pleading/list#method:Handler.Execute
+go:core/application/pleading/list#method:Query.Gavelspace
+go:core/application/pleading/list#method:Query.Limit
+go:core/application/pleading/list#method:Query.Offset
+go:core/application/pleading/list#method:Query.ProjectID
+go:core/application/pleading/list#method:Query.Status
+go:core/application/pleading/list#method:Query.TenantID
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#func:Of
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/domain/shared/failure#method:sentinel.Kind
