@@ -1,0 +1,19 @@
+# observed
+go:core/userinterface/cli/ui#func:BuildWarning
+go:core/userinterface/cli/ui#func:CoverageBlock
+go:core/userinterface/cli/ui#func:ExistingConfig
+go:core/userinterface/cli/ui#func:FirstRunHint
+go:core/userinterface/cli/ui#func:Header
+go:core/userinterface/cli/ui#func:JudgeVerdict
+go:core/userinterface/cli/ui#func:MissingTargetsWarning
+go:core/userinterface/cli/ui#func:PhaseHeader
+go:core/userinterface/cli/ui#func:PhaseHeaderWithElapsed
+go:core/userinterface/cli/ui#func:PhaseItem
+go:core/userinterface/cli/ui#func:RulingLine
+go:core/userinterface/cli/ui#func:ServerFallbackWarning
+go:core/userinterface/cli/ui#func:SummaryTable
+go:core/userinterface/cli/ui#func:TreeItem
+go:core/userinterface/cli/ui#func:TreeLastItem
+go:core/userinterface/cli/ui#func:TreeLastItemWithStatus
+go:core/userinterface/cli/ui#func:Verdict
+go:core/userinterface/cli/ui#func:formatDuration

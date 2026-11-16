@@ -1,0 +1,11 @@
+# observed
+go:core/application/casefile/classify#func:NewCommand
+go:core/application/casefile/classify#method:Command.Branch
+go:core/application/casefile/classify#method:Command.Findings
+go:core/application/casefile/classify#method:Command.ProjectID
+go:core/domain/casefile/model/evidence/finding#func:NewFinding
+go:core/domain/casefile/model/evidence/finding#func:NewFingerprintID
+go:core/domain/casefile/model/evidence/finding#method:Finding.ID
+go:core/domain/casefile/model/evidence/finding#method:FingerprintID.Value
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
