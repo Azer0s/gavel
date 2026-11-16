@@ -7,3 +7,8 @@ resources:
     icon: language-go
     tags: [cloud-2]
     source: {repository: golang, tag: 1.25.7-bookworm}
+  - name: node
+    type: registry-image
+    icon: nodejs
+    tags: [cloud-2]
+    source: {repository: node, tag: 24.22.3-bookworm}

@@ -192,7 +192,27 @@ suites:
     owner: "//apps/web:web"
     # how vitest runs breaks every test file alike: a few tell
     sample_on: [apps/web/vitest.config.ts]
-    run_slice: ci/pipelinegen/vitest-batch.yml
+    image: node
+    steps:
+      - setup: shell
+        with:
+          dir: apps/web
+          timeout: 15m
+          caches:
+            - {dir: pnpm-store, env: PNPM_STORE, mb: 2048, age: 30d, unit: whole}
+            - {dir: npm, env: npm_config_cache, mb: 512, age: 30d, unit: whole}
+          script: npx --yes pnpm@10.12.1 install --frozen-lockfile --store-dir "$PNPM_STORE"
+      # the batch's files in one vitest run; when it fails, each file runs
+      # again on its own, so a file's result is its own
+      - run: shell
+        batch: true
+        with:
+          dir: apps/web
+          timeout: 10m
+          script: |
+            set --
+            for s in $PIPELINEGEN_SLICES; do set -- "$@" "${s#apps/web/}"; done
+            node_modules/.bin/vitest run "$@"
 
 runs:
   # Every commit on the default branch, compared with the last one whose run
@@ -236,7 +256,8 @@ everything_on:
   # the images every suite's tasks run in
   - ci/root.yml
   # the web app's npm packages: Bazel installs them from this lockfile for
-  # the app, the vitest files and the browser specs alike
+  # the app, and pnpm for the vitest files; the browser specs take them
+  # from Bazel's install
   - apps/web/package.json
   - apps/web/pnpm-lock.yaml
   - "ci/pipelinegen/**"
