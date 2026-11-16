@@ -40,7 +40,7 @@ concourse:
       tar -xzf "$f" -C /usr/local --strip-components=1 --no-same-owner "node-$v-linux-x64/bin/node" &&
       go mod download && (cd tools && go mod download)
     bootstrap:
-      release: {version: v0.1.13-rc.3, sha256: 66edcea0dcf23c7ef89b4863a7908c481d96b66133d477e7fd927e5dfc639b96}
+      release: {version: v0.1.13-rc.18, sha256: 1dcacdb41949c3a032966f0221f384c04ed854f2398c8a8771d0e8e830598c56}
       bazelisk: {version: v1.30.0, sha256: a248ae2b2b62b5baebb748f6fba7203bff1a27e5d01b55399a8406744cb539e8}
 
 plugins:
@@ -48,28 +48,28 @@ plugins:
   # ignores comments and formatting.
   - name: go-sbom
     kind: sbom
-    repository: sideways-works/go-sbom
-    release: {version: v0.1.3-rc.3, sha256: fd95aa5ad762e5fb145e16aff50c608d7b43969a01509106dc70a7de8f64573f}
+    repository: sideways-works/pipelinegen-sbom-go
+    release: {version: v0.1.3-rc.5, sha256: 2c07e4419733085fbc90e1fc080e940e2d6eca99c02d0d6e7ace422f9ebf7327}
     exclude: ["examples/**"]
   # Who uses what: links between declarations, and which declarations each
   # test file ran, read from the coverage the batch leaves.
   - name: go-correlator
     kind: correlator
-    repository: sideways-works/go-correlator
-    release: {version: v0.1.8-rc.8, sha256: c8b222ce777dc84f33a2097a3afc2ceca930468443d3291ae55ac6ce203b4fe1}
+    repository: sideways-works/pipelinegen-correlator-go
+    release: {version: v0.1.8-rc.12, sha256: 9850db46545444bd5d4c84631c29d0481c404cf1bfd51d7401ad8cadb0b27337}
     exclude: ["examples/**"]
   # TypeScript: what exists in the web app and the specs (functions,
   # components, module init) and who ran it, from the browser's and the
   # test runner's coverage, read through the bundle's source map.
   - name: ts
     kind: sbom
-    repository: sideways-works/ts-sbom
-    release: {version: v0.1.3-rc.1, sha256: 844e67ef1108d7e25cecddca9c487a267929946ffd57e76ad7afcb3132988915}
+    repository: sideways-works/pipelinegen-sbom-ts
+    release: {version: v0.1.3-rc.2, sha256: 78f4abbf2c529e6b8d335df2300590630e1c397e4c9610fd29addb4317e74c27}
     exclude: ["examples/**", "docs/**"]
   - name: react
     kind: correlator
-    repository: sideways-works/react-correlator
-    release: {version: v0.1.4-rc.12, sha256: f57e217fb7e9b03ad6ff0f532ad819642b1da75d21d65f3d0ed1f8846b1a3efe}
+    repository: sideways-works/pipelinegen-correlator-react
+    release: {version: v0.1.4-rc.14, sha256: 35f6262315e76b91ceb28f19c11d7f065c8aee7e7a3a5eb4ef91f412794bb8b3}
     exclude: ["examples/**", "docs/**"]
     config:
       # gavel has no Vite config to read the build from: the browser batch
@@ -80,7 +80,7 @@ plugins:
   # TypeScript correlator links code to when it imports a package.
   - name: npm
     kind: sbom
-    repository: sideways-works/npm-sbom
+    repository: sideways-works/pipelinegen-sbom-npm
     release: {version: v0.1.2-rc.2, sha256: 63fd411fd3d6e48ad362f781209c51545c28ad18896b81f2ccf15f45b1e11cd0}
     exclude: ["examples/**"]
   # The API contract: each operation of openapi/v1 a unit, and which Go code
@@ -88,13 +88,13 @@ plugins:
   # which operations each browser spec requested.
   - name: openapi
     kind: sbom
-    repository: sideways-works/openapi-sbom
-    release: {version: v0.1.2-rc.3, sha256: 2a0727feece7a5bb16c976d38f5a4711cdffb8c72884ee530cfa65289e247427}
+    repository: sideways-works/pipelinegen-sbom-openapi
+    release: {version: v0.1.2-rc.4, sha256: c9854ead7c4d78985fff1f2dc4e55a8148bb9d8f284c828060da849b7688a737}
     exclude: ["examples/**", "docs/**", ".github/**"]
   - name: api-uses
     kind: correlator
-    repository: sideways-works/oapi-codegen-correlator
-    release: {version: v0.1.5-rc.1, sha256: ae24f130f54fae4cddda0b97de588a27b629af917e3644a6bb838e69e98dc215}
+    repository: sideways-works/pipelinegen-correlator-oapi-codegen
+    release: {version: v0.1.5-rc.2, sha256: ad95aa58e261ebdd18711cf9d1ad4c7f439bda4ca746761efdfe6e27a4aa1bbe}
     exclude: ["examples/**"]
     config:
       documents:
@@ -104,8 +104,8 @@ plugins:
   # Writes the Concourse pipeline from this file.
   - name: concourse
     kind: runner
-    repository: sideways-works/concourse-runner
-    release: {version: v0.1.9-rc.1, sha256: ca769f67e37a0d7ed53ef850e313a7051140c3dcb61930f33c8c5e4bfed57d94}
+    repository: sideways-works/pipelinegen-runner-concourse
+    release: {version: v0.1.9-rc.10, sha256: bf8c8063ffafdaffaf1773db9fe19b9a85851a5bfff470053b97a871d9cf2ba2}
 
 suites:
   # Go tests that need nothing but Bazel: one slice per _test.go file.

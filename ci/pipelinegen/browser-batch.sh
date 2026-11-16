@@ -80,7 +80,7 @@ if [ "${PIPELINEGEN_RECORD:-false}" = true ] && [ ! -f "$fixture" ]; then
 	[ -n "${GITHUB_TOKEN:-}" ] || { echo "a recording run needs react-correlator's playwright.mjs: set REACT_CORRELATOR_FIXTURE or give the batch GITHUB_TOKEN" >&2; exit 1; }
 	mkdir -p "$(dirname "$fixture")"
 	url=$(curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" \
-		"https://api.github.com/repos/sideways-works/react-correlator/releases/tags/$REACT_FIXTURE_VERSION" |
+		"https://api.github.com/repos/sideways-works/pipelinegen-correlator-react/releases/tags/$REACT_FIXTURE_VERSION" |
 		node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const a=JSON.parse(s).assets.find(a=>a.name==="playwright.mjs");console.log(a?a.url:"")})')
 	curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/octet-stream" -o "$fixture" "$url" || exit 1
 	echo "$REACT_FIXTURE_SHA256  $fixture" | sha256sum -c - || exit 1
