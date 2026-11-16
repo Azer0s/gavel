@@ -1,0 +1,8 @@
+# observed
+go:core/application/pleading/file#method:Command.TenantID
+go:core/application/pleading/file#method:Handler.Execute
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/project/model#func:NewProjectID
+go:core/domain/project/model#method:ProjectID.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
