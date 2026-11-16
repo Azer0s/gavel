@@ -1,0 +1,11 @@
+# observed
+go:core/application/iam/tenant/create#func:NewHandler
+go:core/application/iam/tenant/create#method:Command.DisplayName
+go:core/application/iam/tenant/create#method:Command.OccurredAt
+go:core/application/iam/tenant/create#method:Command.Slug
+go:core/application/iam/tenant/create#method:Handler.Execute
+go:core/domain/iam/model/tenant#func:NewSlug
+go:core/domain/iam/model/tenant#func:NewTenant
+go:core/domain/iam/model/tenant#func:isSlugRune
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

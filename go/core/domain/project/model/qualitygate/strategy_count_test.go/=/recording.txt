@@ -1,0 +1,17 @@
+# observed
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/casefile/model/evidence/coverage#func:NewContent
+go:core/domain/casefile/model/evidence/finding#func:NewContent
+go:core/domain/casefile/model/evidence/finding#func:NewFinding
+go:core/domain/casefile/model/evidence/finding#func:NewFingerprintID
+go:core/domain/casefile/model/evidence/finding#method:Content.Findings
+go:core/domain/casefile/model/evidence/finding#method:Finding.Severity
+go:core/domain/project/model/qualitygate#func:NewCountBySeverity
+go:core/domain/project/model/qualitygate#func:NewOutcome
+go:core/domain/project/model/qualitygate#func:countBySeverity
+go:core/domain/project/model/qualitygate#method:CountBySeverity.Evaluate
+go:core/domain/project/model/qualitygate#method:CountBySeverity.checkThresholds
+go:core/domain/project/model/qualitygate#method:Outcome.Detail
+go:core/domain/project/model/qualitygate#method:Outcome.Passed
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

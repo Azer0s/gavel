@@ -1,0 +1,2 @@
+# observed
+go:core/application/shared/event#func:EventsFromDomain
