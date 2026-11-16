@@ -1,0 +1,5 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/bazel/runner#func:hasPackageJSON
+go:core/infrastructure/platform/bazel/runner#func:resolveProjectDir
+go:core/infrastructure/platform/bazel/runner#func:runJSCoverage
