@@ -1,0 +1,8 @@
+# observed
+go:core/domain/casefile/model/evidence#func:NewEvidenceID
+go:core/domain/casefile/model/evidence#func:ParseEvidenceID
+go:core/domain/casefile/model/evidence#method:EvidenceID.Equal
+go:core/domain/casefile/model/evidence#method:EvidenceID.String
+go:core/domain/casefile/model/evidence#method:EvidenceID.UUID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

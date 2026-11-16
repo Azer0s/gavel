@@ -1,0 +1,14 @@
+# observed
+go:core/domain/project/model/qualitygate#func:NewCountBySeverity
+go:core/domain/project/model/qualitygate#func:NewForbiddenList
+go:core/domain/project/model/qualitygate#func:NewMaxViolations
+go:core/domain/project/model/qualitygate#func:NewMinNewCodeCoverage
+go:core/domain/project/model/qualitygate#func:NewMinPercentage
+go:core/domain/project/model/qualitygate#func:NewZeroTolerance
+go:core/domain/project/model/qualitygate#method:CountBySeverity.Equal
+go:core/domain/project/model/qualitygate#method:ForbiddenList.Equal
+go:core/domain/project/model/qualitygate#method:MaxViolations.Equal
+go:core/domain/project/model/qualitygate#method:MinNewCodeCoverage.Equal
+go:core/domain/project/model/qualitygate#method:MinPercentage.Equal
+go:core/domain/project/model/qualitygate#method:ZeroTolerance.Equal
+go:core/domain/shared/failure#func:New

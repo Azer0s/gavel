@@ -1,0 +1,10 @@
+# observed
+go:core/application/supporting/search#func:NewHandler
+go:core/application/supporting/search#func:NewQuery
+go:core/application/supporting/search#method:Handler.Execute
+go:core/application/supporting/search#method:Query.Limit
+go:core/application/supporting/search#method:Query.Text
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#func:Of
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/domain/shared/failure#method:sentinel.Kind

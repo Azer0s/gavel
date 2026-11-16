@@ -1,0 +1,8 @@
+# observed
+go:core/domain/iam/model/user#func:NewUserID
+go:core/domain/iam/model/user#func:ParseUserID
+go:core/domain/iam/model/user#method:UserID.Equal
+go:core/domain/iam/model/user#method:UserID.String
+go:core/domain/iam/model/user#method:UserID.UUID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

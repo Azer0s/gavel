@@ -1,0 +1,4 @@
+# observed
+go:core/userinterface/cli/initgavel#func:pickLayers
+go:core/userinterface/cli/initgavel#func:renderArchitectureYAML
+go:core/userinterface/cli/initgavel#func:writeArchitectureConfig
