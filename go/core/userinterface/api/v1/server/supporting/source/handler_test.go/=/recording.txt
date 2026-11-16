@@ -1,0 +1,26 @@
+# observed
+go:core/application/project/getbykey#func:NewHandler
+go:core/application/project/getbykey#func:NewQuery
+go:core/application/project/getbykey#method:Handler.Execute
+go:core/application/project/getbykey#method:Query.Key
+go:core/application/project/getbykey#method:Query.TenantID
+go:core/application/shared/apperr#func:Of
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#func:Of
+go:core/domain/shared/failure#method:sentinel.Kind
+go:core/userinterface/api/v1/server/httpx#func:BadRequest
+go:core/userinterface/api/v1/server/httpx#func:NewProblem
+go:core/userinterface/api/v1/server/httpx#func:NotFound
+go:core/userinterface/api/v1/server/httpx#func:ParseUUIDOrZero
+go:core/userinterface/api/v1/server/httpx/auth#func:PrincipalFromContext
+go:core/userinterface/api/v1/server/httpx/auth#func:WithPrincipal
+go:core/userinterface/api/v1/server/supporting/source#func:New
+go:core/userinterface/api/v1/server/supporting/source#func:findingViewToGen
+go:core/userinterface/api/v1/server/supporting/source#func:isSafeSourcePath
+go:core/userinterface/api/v1/server/supporting/source#func:sourceContentType
+go:core/userinterface/api/v1/server/supporting/source#func:toInt32Slice
+go:core/userinterface/api/v1/server/supporting/source#method:Handler.GetProjectSource
+go:core/userinterface/api/v1/server/supporting/source#method:Handler.UploadProjectSource
+go:core/userinterface/api/v1/server/supporting/source#method:Handler.fetchProjectDetail
+go:core/userinterface/api/v1/server/supporting/source#method:Handler.sourceWithContext
