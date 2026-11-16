@@ -1,0 +1,1 @@
+go:core/domain/shared/failure#func:New

@@ -1,0 +1,7 @@
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/watch#func:NewFileWatcher
+go:core/userinterface/cli/watch#func:shouldIgnore
+go:core/userinterface/cli/watch#func:shouldIgnoreDir
+go:core/userinterface/cli/watch#method:FileWatcher.Run
+go:core/userinterface/cli/watch#method:FileWatcher.addRecursive
+go:core/userinterface/cli/watch#method:FileWatcher.tryAddDirectory

@@ -1,0 +1,1 @@
+go:core/infrastructure/platform/git#func:parseDiffOutput

@@ -1,0 +1,8 @@
+go:core/domain/iam/model/user#func:NewPasswordHash
+go:core/domain/iam/model/user#method:PasswordHash.String
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/iam/argon2#func:DefaultConfig
+go:core/infrastructure/iam/argon2#func:New
+go:core/infrastructure/iam/argon2#func:NewWithConfig
+go:core/infrastructure/iam/argon2#method:Hasher.Hash
+go:core/infrastructure/iam/argon2#method:Hasher.Verify

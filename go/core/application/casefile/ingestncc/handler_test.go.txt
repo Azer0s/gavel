@@ -1,0 +1,12 @@
+go:core/application/casefile/ingestncc#func:NewCommand
+go:core/application/casefile/ingestncc#func:NewHandler
+go:core/application/casefile/ingestncc#method:Command.ChangedLines
+go:core/application/casefile/ingestncc#method:Command.RawLCOV
+go:core/application/casefile/ingestncc#method:Handler.Execute
+go:core/domain/casefile/model/evidence/coverage#func:NewPatchContent
+go:core/domain/casefile/model/evidence/coverage#func:NewPatchContentFromChanges
+go:core/domain/casefile/model/evidence/coverage#method:PatchContent.CoverableLines
+go:core/domain/casefile/model/evidence/coverage#method:PatchContent.CoveredLines
+go:core/domain/casefile/model/evidence/coverage#method:PatchContent.Percent
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

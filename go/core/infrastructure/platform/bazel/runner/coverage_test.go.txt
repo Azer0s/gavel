@@ -1,0 +1,9 @@
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/bazel/runner#func:bazelOutputPathWith
+go:core/infrastructure/platform/bazel/runner#func:collectCoverageDataWith
+go:core/infrastructure/platform/bazel/runner#func:collectIndividualCoverageFiles
+go:core/infrastructure/platform/bazel/runner#func:findCombinedReportWith
+go:core/infrastructure/platform/bazel/runner#func:resolveTestlogsDir
+go:core/infrastructure/platform/bazel/runner#func:resolveTestlogsDirWith
+go:core/infrastructure/platform/bazel/runner#func:runCoverage
+go:core/infrastructure/platform/bazel/runner#method:ExecRunner.Run

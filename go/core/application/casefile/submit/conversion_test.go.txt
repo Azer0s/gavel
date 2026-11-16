@@ -1,0 +1,6 @@
+go:core/application/casefile/submit#func:toFileCoverageEntries
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/project/model#func:NewFileCoverageEntry
+go:core/domain/project/model#func:copyInts
+go:core/domain/project/model#method:FileCoverageEntry.FilePath
+go:core/domain/shared/failure#func:New

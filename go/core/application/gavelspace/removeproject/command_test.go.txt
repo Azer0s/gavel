@@ -1,0 +1,6 @@
+go:core/application/gavelspace/removeproject#func:NewCommand
+go:core/application/gavelspace/removeproject#method:Command.GavelspaceID
+go:core/application/gavelspace/removeproject#method:Command.ProjectID
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

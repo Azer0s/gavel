@@ -1,0 +1,8 @@
+go:core/application/supporting/analyzetarget#func:NewCommand
+go:core/application/supporting/analyzetarget#func:NewHandler
+go:core/application/supporting/analyzetarget#method:Command.Languages
+go:core/application/supporting/analyzetarget#method:Command.Target
+go:core/application/supporting/analyzetarget#method:Command.Workspace
+go:core/application/supporting/analyzetarget#method:Handler.Execute
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

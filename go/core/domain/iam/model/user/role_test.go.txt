@@ -1,0 +1,6 @@
+go:core/domain/iam/model/user#func:NewRole
+go:core/domain/iam/model/user#method:Role.Equal
+go:core/domain/iam/model/user#method:Role.IsAdmin
+go:core/domain/iam/model/user#method:Role.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
