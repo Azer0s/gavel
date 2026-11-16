@@ -1,0 +1,11 @@
+# observed
+go:core/application/casefile/ingestcoverage#method:Command.Data
+go:core/application/casefile/ingestcoverage#method:Command.Format
+go:core/application/casefile/ingestcoverage#method:Command.Source
+go:core/application/casefile/ingestcoverage#method:Handler.Execute
+go:core/domain/casefile/model/evidence#func:NewEvidence
+go:core/domain/casefile/model/evidence#func:NewEvidenceID
+go:core/domain/casefile/model/evidence#func:buildEvidence
+go:core/domain/casefile/model/evidence/coverage#func:NewContent
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

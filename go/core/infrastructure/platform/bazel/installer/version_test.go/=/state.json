@@ -1,0 +1,14 @@
+{
+  "label": "core/infrastructure/platform/bazel/installer/version_test.go",
+  "state": "passed",
+  "updated": "2026-11-16T18:37:53.849236893Z",
+  "seconds": 1.8266779020000001,
+  "recorded": true,
+  "cannot_tell": [
+    {
+      "plugin": "correlators",
+      "reason": "1 test ran and nothing was recorded",
+      "since": "2026-11-16T18:37:53.858086479Z"
+    }
+  ]
+}
