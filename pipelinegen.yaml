@@ -170,20 +170,6 @@ suites:
     sample_on: [apps/web/vitest.config.ts]
     run_slice: ci/pipelinegen/vitest-batch.yml
 
-  # The end-to-end tests (build tag e2e) that drive the built binaries.
-  # They don't build today (the CLI's helpers import an internal package of
-  # the server), so no run covers this suite yet; it is declared so the check
-  # accounts for its files and the binaries they drive. Add it to the runs
-  # once the tests build.
-  e2e:
-    tests: ["apps/cli/test/e2e/*_test.go", "apps/server/test/e2e/*_test.go"]
-    owner: "//apps/cli/cmd/gavel:gavel"
-    extra_deps:
-      - tests: ["apps/server/test/e2e/*_test.go"]
-        deps: ["//apps/server/cmd/gavel-server"]
-    privileged: true
-    run_slice: ci/pipelinegen/e2e-batch.yml
-
 runs:
   # Ready pull requests into the default branch: the change merged into its
   # tip, compared with that tip. Only the test files it reaches run.
@@ -259,8 +245,12 @@ untested:
     reason: images in the source tree that nothing imports and the build doesn't take
   - paths: [apps/web/scripts/generate-tokens.mjs, apps/web/tokens.json]
     reason: the design tokens and the script a person runs to turn them into the checked-in styles
-  - paths: [apps/cli/test/e2e/run.sh, apps/server/test/e2e/run.sh, apps/server/test/e2e/devdemo.sh, "apps/server/testdata/**"]
-    reason: scripts and sample data for running the end-to-end tests and a demo by hand
+  - paths: ["apps/cli/test/e2e/*_test.go", "apps/server/test/e2e/*_test.go", apps/cli/test/e2e/run.sh, apps/server/test/e2e/run.sh]
+    reason: end-to-end tests behind the build tag e2e; they do not build at this commit
+  - paths: [apps/server/test/e2e/devdemo.sh, "apps/server/testdata/**"]
+    reason: a script and sample data for running a demo by hand
+  - paths: [apps/server/cmd/gavel-server/BUILD.bazel, apps/server/internal/platform/frontend/BUILD.bazel]
+    reason: the server's Bazel build, which no test runs; the browser suite builds the server with go build
   - paths: [apps/cli/BUILD.bazel, apps/cli/test/e2e/BUILD.bazel, apps/server/test/e2e/BUILD.bazel, core/domain/iam/model/BUILD.bazel, core/userinterface/api/v1/server/supporting/BUILD.bazel]
     reason: BUILD files that declare no target
   - paths: [core/userinterface/api/v1/gen/oapi-codegen.yaml]
