@@ -1,0 +1,6 @@
+go:core/domain/shared/failure#func:New
+go:core/userinterface/api/v1/server/httpx#func:ClientIP
+go:core/userinterface/api/v1/server/httpx/auth#func:ClientIPFromContext
+go:core/userinterface/api/v1/server/httpx/auth#func:ExposeRawRequest
+go:core/userinterface/api/v1/server/httpx/auth#func:SessionCookieFromContext
+go:core/userinterface/api/v1/server/httpx/auth#func:UserAgentFromContext

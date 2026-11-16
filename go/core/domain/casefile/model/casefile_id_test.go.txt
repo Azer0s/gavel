@@ -1,0 +1,8 @@
+go:core/domain/casefile/model#func:NewCaseFileID
+go:core/domain/casefile/model#func:ParseCaseFileID
+go:core/domain/casefile/model#method:CaseFileID.Equal
+go:core/domain/casefile/model#method:CaseFileID.String
+go:core/domain/casefile/model#method:CaseFileID.UUID
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

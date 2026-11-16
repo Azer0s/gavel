@@ -1,0 +1,6 @@
+go:core/infrastructure/platform/git#func:NewSourceContext
+go:core/infrastructure/platform/git#func:NewSourceContextInDir
+go:core/infrastructure/platform/git#func:parseDiffOutput
+go:core/infrastructure/platform/git#method:SourceContext.Branch
+go:core/infrastructure/platform/git#method:SourceContext.ChangedLines
+go:core/infrastructure/platform/git#method:SourceContext.CommitSHA

@@ -1,0 +1,14 @@
+go:core/application/gavelspace/registerproject#method:Command.GavelspaceID
+go:core/application/gavelspace/registerproject#method:Command.ProjectID
+go:core/application/gavelspace/registerproject#method:Command.TargetPattern
+go:core/application/gavelspace/registerproject#method:Command.TenantID
+go:core/application/gavelspace/registerproject#method:Handler.Execute
+go:core/domain/gavelspace/model#func:NewGavelspace
+go:core/domain/gavelspace/model#func:NewGavelspaceID
+go:core/domain/gavelspace/model#func:NewProjectRef
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/iam/model/tenant#method:TenantID.IsZero
+go:core/domain/project/model#func:ParseProjectID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

@@ -1,0 +1,2 @@
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/casefile/sarif#func:ParseArchitectureViolations

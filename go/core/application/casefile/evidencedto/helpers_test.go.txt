@@ -1,0 +1,7 @@
+go:core/application/casefile/evidencedto#func:ExtractArchIDs
+go:core/application/casefile/evidencedto#func:ExtractFindings
+go:core/application/casefile/evidencedto#func:ExtractFingerprints
+go:core/application/casefile/evidencedto#func:ExtractViolations
+go:core/application/casefile/evidencedto#func:FilterNewViolations
+go:core/application/casefile/evidencedto#func:ReplaceArchEvidence
+go:core/domain/shared/failure#func:New

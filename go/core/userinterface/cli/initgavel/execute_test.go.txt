@@ -1,0 +1,11 @@
+go:core/userinterface/cli/initgavel#func:buildConfigDTO
+go:core/userinterface/cli/initgavel#func:copyConfig
+go:core/userinterface/cli/initgavel#func:defaultQualityGate
+go:core/userinterface/cli/initgavel#func:execute
+go:core/userinterface/cli/initgavel#func:extractTooling
+go:core/userinterface/cli/initgavel#func:pickLayers
+go:core/userinterface/cli/initgavel#func:readFromConfig
+go:core/userinterface/cli/initgavel#func:renderArchitectureYAML
+go:core/userinterface/cli/initgavel#func:resolveAbsConfigPath
+go:core/userinterface/cli/initgavel#func:writeArchitectureConfig
+go:core/userinterface/cli/initgavel#func:writeConfig

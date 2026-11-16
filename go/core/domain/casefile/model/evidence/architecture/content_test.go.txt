@@ -1,0 +1,7 @@
+go:core/domain/casefile/model/evidence/architecture#func:NewContent
+go:core/domain/casefile/model/evidence/architecture#func:NewViolation
+go:core/domain/casefile/model/evidence/architecture#method:Content.Merge
+go:core/domain/casefile/model/evidence/architecture#method:Content.Subtype
+go:core/domain/casefile/model/evidence/architecture#method:Content.Type
+go:core/domain/casefile/model/evidence/architecture#method:Content.Violations
+go:core/domain/shared/failure#func:New

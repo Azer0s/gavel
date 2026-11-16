@@ -1,0 +1,4 @@
+go:core/userinterface/cli/mcp/tools#func:formatTrendsOutput
+go:core/userinterface/cli/mcp/tools#func:trendArrow
+go:core/userinterface/cli/mcp/tools#func:trendTimeAgo
+go:core/userinterface/cli/mcp/tools#func:writeTrendSummary
