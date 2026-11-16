@@ -1,0 +1,16 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/bazel/runner#func:CollectReportsFromDir
+go:core/infrastructure/platform/bazel/runner#func:CollectSARIFFiles
+go:core/infrastructure/platform/bazel/runner#func:ExtractToolName
+go:core/infrastructure/platform/bazel/runner#func:HasRulesLintReportsInDir
+go:core/infrastructure/platform/bazel/runner#func:NewAspectCollector
+go:core/infrastructure/platform/bazel/runner#func:NewHybridCollector
+go:core/infrastructure/platform/bazel/runner#func:NewReportCollector
+go:core/infrastructure/platform/bazel/runner#func:bazelBinDir
+go:core/infrastructure/platform/bazel/runner#func:hasRulesLintReportsWithRunner
+go:core/infrastructure/platform/bazel/runner#func:isRulesLintReport
+go:core/infrastructure/platform/bazel/runner#func:runAspect
+go:core/infrastructure/platform/bazel/runner#method:AspectCollector.Collect
+go:core/infrastructure/platform/bazel/runner#method:HybridCollector.Collect
+go:core/infrastructure/platform/bazel/runner#method:ReportCollector.Collect

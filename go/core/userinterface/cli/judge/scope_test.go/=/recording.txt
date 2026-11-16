@@ -1,0 +1,4 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/judge#func:isExcluded
+go:core/userinterface/cli/judge#func:scopeTargetsToPattern

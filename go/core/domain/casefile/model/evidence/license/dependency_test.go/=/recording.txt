@@ -1,0 +1,7 @@
+# observed
+go:core/domain/casefile/model/evidence/license#func:NewDependency
+go:core/domain/casefile/model/evidence/license#method:Dependency.License
+go:core/domain/casefile/model/evidence/license#method:Dependency.Name
+go:core/domain/casefile/model/evidence/license#method:Dependency.Version
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

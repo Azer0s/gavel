@@ -1,0 +1,4 @@
+# observed
+go:core/application/casefile/evidencedto#func:FileCoverageFromPerLine
+go:core/application/casefile/evidencedto#func:fileCoverage
+go:core/domain/shared/failure#func:New
