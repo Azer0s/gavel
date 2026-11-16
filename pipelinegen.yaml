@@ -75,7 +75,7 @@ plugins:
   - name: react
     kind: correlator
     repository: sideways-works/pipelinegen-correlator-react
-    release: {version: v0.1.4-rc.14, sha256: 35f6262315e76b91ceb28f19c11d7f065c8aee7e7a3a5eb4ef91f412794bb8b3}
+    release: {version: v0.1.4-rc.15, sha256: 45cd4fd378072c039d3847ec2657d712d507843dd7dda073fd40a823ae6f457c}
     exclude: ["examples/**", "docs/**"]
     config:
       # gavel has no Vite config to read the build from: the browser
@@ -409,12 +409,12 @@ suites:
             if [ ! -f "$fixture" ]; then
               [ -n "${GITHUB_TOKEN:-}" ] || { echo "a recording run needs react-correlator's fixture: give the run's browser batch GITHUB_TOKEN, or name the file in REACT_CORRELATOR_FIXTURE" >&2; exit 1; }
               command -v curl >/dev/null || { apt-get update -qq && apt-get install -y -qq curl >/dev/null; }
-              api=https://api.github.com/repos/sideways-works/pipelinegen-correlator-react/releases/tags/v0.1.4-rc.14
+              api=https://api.github.com/repos/sideways-works/pipelinegen-correlator-react/releases/tags/v0.1.4-rc.15
               url=$(curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" "$api" |
                 node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const a=JSON.parse(s).assets.find(a=>a.name==="playwright.mjs");console.log(a?a.url:"")})')
               curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/octet-stream" -o "$fixture" "$url"
             fi
-            echo "cab713eecbda5edad59e68278413e23815e6d208e6534cd384e23900930654e3  $fixture" | sha256sum -c -
+            echo "2cfe03612b245c6af37e1a7c80798843c3e5b69a472aa2980148f94d3b6c78c7  $fixture" | sha256sum -c -
             echo "REACT_CORRELATOR_FIXTURE=$fixture" >>"$PIPELINEGEN_EXPORT"
           stop: |
             w=$PIPELINEGEN_WORK/stack
