@@ -1,0 +1,16 @@
+# observed
+go:core/userinterface/cli/mcp#func:NewCommand
+go:core/userinterface/cli/mcp#func:NewServer
+go:core/userinterface/cli/mcp#func:implementation
+go:core/userinterface/cli/mcp/executor#func:NewWithBinary
+go:core/userinterface/cli/mcp/resources#func:RegisterArchitecture
+go:core/userinterface/cli/mcp/resources#func:RegisterConfig
+go:core/userinterface/cli/mcp/resources#func:RegisterProjects
+go:core/userinterface/cli/mcp/tools#func:RegisterArch
+go:core/userinterface/cli/mcp/tools#func:RegisterCoverage
+go:core/userinterface/cli/mcp/tools#func:RegisterFindings
+go:core/userinterface/cli/mcp/tools#func:RegisterInit
+go:core/userinterface/cli/mcp/tools#func:RegisterJudge
+go:core/userinterface/cli/mcp/tools#func:RegisterLintFile
+go:core/userinterface/cli/mcp/tools#func:RegisterTrends
+go:core/userinterface/cli/mcp/tools#func:RegisterValidate
