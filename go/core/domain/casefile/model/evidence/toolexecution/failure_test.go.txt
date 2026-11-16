@@ -1,0 +1,6 @@
+go:core/domain/casefile/model/evidence/toolexecution#func:NewFailure
+go:core/domain/casefile/model/evidence/toolexecution#func:newFailure
+go:core/domain/casefile/model/evidence/toolexecution#method:Failure.Reason
+go:core/domain/casefile/model/evidence/toolexecution#method:Failure.Tool
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

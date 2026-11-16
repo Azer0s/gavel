@@ -1,0 +1,4 @@
+go:core/userinterface/cli/judge/output/tree#func:BuildFindingsTree
+go:core/userinterface/cli/judge/output/tree#func:aggregateFindings
+go:core/userinterface/cli/judge/output/tree#func:ensureFindingsDir
+go:core/userinterface/cli/judge/output/tree#func:sortFindingsTree

@@ -1,0 +1,11 @@
+go:core/userinterface/cli/mcp/executor#func:ExtractJSON
+go:core/userinterface/cli/mcp/executor#func:NewWithBinary
+go:core/userinterface/cli/mcp/executor#method:CLI.RunIn
+go:core/userinterface/cli/mcp/executor#method:CLI.RunInJSON
+go:core/userinterface/cli/mcp/executor#method:CLI.run
+go:core/userinterface/cli/mcp/tools#func:filterFindings
+go:core/userinterface/cli/mcp/tools#func:isNew
+go:core/userinterface/cli/mcp/tools#func:renderFindings
+go:core/userinterface/cli/mcp/tools#func:runFindings
+go:core/userinterface/cli/mcp/tools#func:sortFindings
+go:core/userinterface/cli/mcp/tools#func:summarizeByRule

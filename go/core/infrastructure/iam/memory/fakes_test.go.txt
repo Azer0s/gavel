@@ -1,0 +1,14 @@
+go:core/domain/iam/model/apitoken#func:NewSecret
+go:core/domain/iam/model/apitoken#method:Secret.String
+go:core/domain/iam/model/session#func:NewToken
+go:core/domain/iam/model/session#method:Token.String
+go:core/domain/iam/model/user#func:NewPasswordHash
+go:core/domain/iam/model/user#method:PasswordHash.String
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/iam/memory#func:NewFakeHasher
+go:core/infrastructure/iam/memory#func:NewFakeSecretGenerator
+go:core/infrastructure/iam/memory#func:encodeFakeBody
+go:core/infrastructure/iam/memory#method:FakeHasher.Hash
+go:core/infrastructure/iam/memory#method:FakeHasher.Verify
+go:core/infrastructure/iam/memory#method:FakeSecretGenerator.NewAPITokenSecret
+go:core/infrastructure/iam/memory#method:FakeSecretGenerator.NewSessionToken

@@ -1,0 +1,3 @@
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/bazel/runner#func:bazelBinDir
+go:core/infrastructure/platform/bazel/runner#func:bazelOutputPathWith

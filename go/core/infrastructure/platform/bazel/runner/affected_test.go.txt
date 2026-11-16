@@ -1,0 +1,9 @@
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/bazel/runner#func:NewBazelTargetResolver
+go:core/infrastructure/platform/bazel/runner#func:buildAffectedFileSet
+go:core/infrastructure/platform/bazel/runner#func:buildOwnerTarget
+go:core/infrastructure/platform/bazel/runner#func:buildRdepsQuery
+go:core/infrastructure/platform/bazel/runner#func:extractPackagePath
+go:core/infrastructure/platform/bazel/runner#func:parseAffectedLabels
+go:core/infrastructure/platform/bazel/runner#method:BazelTargetResolver.FindAffectedTargets
+go:core/infrastructure/platform/bazel/runner#method:BazelTargetResolver.FindOwnerTarget

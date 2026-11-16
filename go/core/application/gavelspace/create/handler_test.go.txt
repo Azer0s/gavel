@@ -1,0 +1,16 @@
+go:core/application/gavelspace/create#func:NewCommand
+go:core/application/gavelspace/create#func:NewHandler
+go:core/application/gavelspace/create#method:Command.Name
+go:core/application/gavelspace/create#method:Command.TenantID
+go:core/application/gavelspace/create#method:Handler.Execute
+go:core/application/shared/event#func:EventsFromDomain
+go:core/domain/gavelspace/model#func:NewGavelspace
+go:core/domain/gavelspace/model#func:NewGavelspaceID
+go:core/domain/gavelspace/model#method:Gavelspace.ClearEvents
+go:core/domain/gavelspace/model#method:Gavelspace.Events
+go:core/domain/gavelspace/model#method:Gavelspace.ID
+go:core/domain/gavelspace/model#method:GavelspaceID.String
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/iam/model/tenant#method:TenantID.IsZero
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

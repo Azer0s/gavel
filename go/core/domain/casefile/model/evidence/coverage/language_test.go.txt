@@ -1,0 +1,5 @@
+go:core/domain/casefile/model/evidence/coverage#func:NewLanguage
+go:core/domain/casefile/model/evidence/coverage#method:Language.Equal
+go:core/domain/casefile/model/evidence/coverage#method:Language.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
