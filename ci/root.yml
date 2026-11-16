@@ -12,3 +12,8 @@ resources:
     icon: nodejs
     tags: [cloud-2]
     source: {repository: node, tag: 24.22.3-bookworm}
+  - name: playwright
+    type: registry-image
+    icon: web
+    tags: [cloud-2]
+    source: {repository: mcr.microsoft.com/playwright, tag: v1.60.0-noble}

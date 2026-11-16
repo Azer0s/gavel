@@ -1,3 +1,0 @@
-#!/bin/sh
-# gavel's browser-test setup calls podman; the batch has Docker.
-exec docker "$@"
