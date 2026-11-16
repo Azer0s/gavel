@@ -19,7 +19,7 @@ func WorkspaceDir() (string, error) {
 	}
 
 	if !isBazelWorkspace(dir) {
-		return "", fmt.Errorf("directory %s is not a Bazel workspace (no MODULE.bazel or WORKSPACE file found)", dir)
+		return "", fmt.Errorf("directory %s is not a Bazel workspace (no MODULE.bazel, WORKSPACE or WORKSPACE.bazel file found)", dir)
 	}
 	return dir, nil
 }
