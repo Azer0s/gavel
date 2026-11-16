@@ -20,7 +20,7 @@ github:
 # out on purpose: whoever generates the pipeline gives it in
 # PIPELINEGEN_CONCOURSE_URL, so no host name lands in this public file.
 concourse:
-  team: main
+  team: sideways-works
   branch: pipelinegen            # this fork's default branch for the tool; yours is main
   repository:
     uri: https://github.com/Azer0s/gavel.git
