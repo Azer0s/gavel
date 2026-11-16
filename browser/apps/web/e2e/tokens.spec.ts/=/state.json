@@ -1,0 +1,12 @@
+{
+  "label": "apps/web/e2e/tokens.spec.ts",
+  "state": "not run",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-browser",
+  "updated": "2026-11-16T19:00:27.351726961Z",
+  "failures": [
+    {
+      "test": "(not run)",
+      "tail": "batch 0 stopped before its first slice started, 7 minutes after the suite began: not its time limit of 120 minutes (suites.browser.minutes); its task died: the build log says why"
+    }
+  ]
+}
