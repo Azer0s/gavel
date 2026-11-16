@@ -1,0 +1,7 @@
+go:core/domain/iam/model/user#func:NewEmail
+go:core/domain/iam/model/user#func:containsWhitespace
+go:core/domain/iam/model/user#func:splitOnceAtSign
+go:core/domain/iam/model/user#method:Email.Equal
+go:core/domain/iam/model/user#method:Email.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

@@ -1,0 +1,1 @@
+go:apps/server/internal/platform/spa#func:Handler

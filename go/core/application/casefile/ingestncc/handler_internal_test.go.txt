@@ -1,0 +1,2 @@
+go:core/application/casefile/ingestncc#func:NewHandler
+go:core/domain/shared/failure#func:New

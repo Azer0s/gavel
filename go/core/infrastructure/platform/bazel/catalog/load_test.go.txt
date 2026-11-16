@@ -1,0 +1,4 @@
+go:core/infrastructure/platform/bazel/catalog#func:ParseCatalog
+go:core/infrastructure/platform/bazel/catalog#func:SetCatalog
+go:core/infrastructure/platform/bazel/catalog#func:active
+go:core/infrastructure/platform/bazel/catalog#func:loadEmbedded

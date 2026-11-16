@@ -1,0 +1,13 @@
+go:core/application/casefile/list#func:NewHandler
+go:core/application/casefile/list#func:NewQuery
+go:core/application/casefile/list#method:Handler.Execute
+go:core/application/casefile/list#method:Query.Gavelspace
+go:core/application/casefile/list#method:Query.Limit
+go:core/application/casefile/list#method:Query.Offset
+go:core/application/casefile/list#method:Query.ProjectID
+go:core/application/casefile/list#method:Query.TenantID
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#func:Of
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/domain/shared/failure#method:sentinel.Kind
