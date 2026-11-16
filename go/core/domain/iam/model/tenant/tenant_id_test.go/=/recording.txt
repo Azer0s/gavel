@@ -1,0 +1,9 @@
+# observed
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/iam/model/tenant#method:TenantID.Equal
+go:core/domain/iam/model/tenant#method:TenantID.IsZero
+go:core/domain/iam/model/tenant#method:TenantID.String
+go:core/domain/iam/model/tenant#method:TenantID.UUID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
