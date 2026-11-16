@@ -1,0 +1,7 @@
+# observed
+go:core/domain/gavelspace/model#func:NewGavelspaceID
+go:core/domain/gavelspace/model#method:GavelspaceID.Equal
+go:core/domain/gavelspace/model#method:GavelspaceID.String
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

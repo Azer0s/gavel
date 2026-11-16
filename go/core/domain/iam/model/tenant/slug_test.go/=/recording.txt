@@ -1,0 +1,7 @@
+# observed
+go:core/domain/iam/model/tenant#func:NewSlug
+go:core/domain/iam/model/tenant#func:isSlugRune
+go:core/domain/iam/model/tenant#method:Slug.Equal
+go:core/domain/iam/model/tenant#method:Slug.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
