@@ -1,0 +1,11 @@
+# observed
+go:core/userinterface/cli/mcp/tools#func:compressRanges
+go:core/userinterface/cli/mcp/tools#func:fileFilter
+go:core/userinterface/cli/mcp/tools#func:formatCoverage
+go:core/userinterface/cli/mcp/tools#func:formatCoverageDiff
+go:core/userinterface/cli/mcp/tools#func:packageMatches
+go:core/userinterface/cli/mcp/tools#func:resolvePackages
+go:core/userinterface/cli/mcp/tools#func:validateCoverageInput
+go:core/userinterface/cli/mcp/tools#func:writeCoverageDiff
+go:core/userinterface/cli/mcp/tools#func:writeCoverageTree
+go:core/userinterface/cli/mcp/tools#func:writeFileBreakdown

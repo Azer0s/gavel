@@ -1,0 +1,5 @@
+# observed
+go:core/domain/project/model/qualitygate#func:NewOutcome
+go:core/domain/project/model/qualitygate#method:Outcome.Detail
+go:core/domain/project/model/qualitygate#method:Outcome.Passed
+go:core/domain/shared/failure#func:New
