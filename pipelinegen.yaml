@@ -206,9 +206,9 @@ macros:
 # go.mod, go.sum, go.work and tools/go.* are not here: go-sbom claims them
 # and lists each module as a unit, so a bump runs the slices whose code
 # links the bumped module, and the graph-bound suites through Bazel's
-# go_deps.
+# go_deps. pipelinegen.yaml isn't either: the planner judges a change to it
+# by what it means for the tests.
 everything_on:
-  - pipelinegen.yaml
   - MODULE.bazel
   - .bazelversion
   - .bazelrc
