@@ -487,19 +487,22 @@ runs:
     trigger: {branch: pipelinegen}
     compare: last_passed
     select: affected
-    suites:
-      go: {}
-      go-db: {}
-      web: {}
-      vitest: {}
-      # the read token fetches go-correlator's cover package and
-      # react-correlator's fixture, which a recording needs; only a
-      # branch's runs get it, never a pull request's
-      browser:
-        secrets:
-          prepare: {GITHUB_TOKEN: github_read_token}
-          batch: {GITHUB_TOKEN: github_read_token}
+    suites: {go: {}, go-db: {}, web: {}, vitest: {}}
     record: true
+
+  # The browser specs on every commit of the branch, recording nothing yet:
+  # a recording's observe step runs in the planner's image, which has no
+  # Node for react-correlator, and no key of this file reaches that step.
+  # The specs run and pass; without lists they run on every change. They
+  # record again in main and the nightly once the tool runs the planner's
+  # prepare in that step. A recording is per run, so they have a run of
+  # their own meanwhile.
+  browser:
+    trigger: {branch: pipelinegen}
+    compare: last_passed
+    select: affected
+    suites: {browser: {}}
+    record: false
 
   # Once a night, everything: the net under every narrowing.
   nightly:
@@ -508,15 +511,7 @@ runs:
       branch: pipelinegen
     compare: none
     select: all
-    suites:
-      go: {}
-      go-db: {}
-      web: {}
-      vitest: {}
-      browser:
-        secrets:
-          prepare: {GITHUB_TOKEN: github_read_token}
-          batch: {GITHUB_TOKEN: github_read_token}
+    suites: {go: {}, go-db: {}, web: {}, vitest: {}}
     record: true
 
 # The web app's BUILD file calls web_project, a macro from gavel's own
