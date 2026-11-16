@@ -1,0 +1,3 @@
+# observed
+go:apps/server/internal/platform/config#func:Load
+go:apps/server/internal/platform/config#func:getenv

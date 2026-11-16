@@ -1,0 +1,25 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/judge/output/json#func:Load
+go:core/userinterface/cli/judge/output/json#func:toVerdict
+go:core/userinterface/cli/report#func:NewCommand
+go:core/userinterface/cli/report#func:NewGitHubPublisher
+go:core/userinterface/cli/report#func:RegisterFlags
+go:core/userinterface/cli/report#func:envOrDefault
+go:core/userinterface/cli/report#func:filterByProject
+go:core/userinterface/cli/report#func:latestRun
+go:core/userinterface/cli/report#func:run
+go:core/userinterface/cli/report/checks#func:Build
+go:core/userinterface/cli/report/checks#func:annotations
+go:core/userinterface/cli/report/checks#func:checkName
+go:core/userinterface/cli/report/checks#func:clampLine
+go:core/userinterface/cli/report/checks#func:conclusion
+go:core/userinterface/cli/report/checks#func:coverageCell
+go:core/userinterface/cli/report/checks#func:findingTitle
+go:core/userinterface/cli/report/checks#func:headSHA
+go:core/userinterface/cli/report/checks#func:level
+go:core/userinterface/cli/report/checks#func:summary
+go:core/userinterface/cli/report/checks#func:title
+go:core/userinterface/cli/report/checks#func:verdictMark
+go:core/userinterface/cli/report/checks#func:writeViolations
+go:core/userinterface/cli/report/github#func:NewPublisher
