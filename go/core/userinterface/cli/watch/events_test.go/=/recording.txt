@@ -1,0 +1,12 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/watch#func:NewEmitter
+go:core/userinterface/cli/watch#method:Emitter.Affected
+go:core/userinterface/cli/watch#method:Emitter.AnalysisDone
+go:core/userinterface/cli/watch#method:Emitter.AnalysisFailed
+go:core/userinterface/cli/watch#method:Emitter.AnalysisStarted
+go:core/userinterface/cli/watch#method:Emitter.Changed
+go:core/userinterface/cli/watch#method:Emitter.Finding
+go:core/userinterface/cli/watch#method:Emitter.Started
+go:core/userinterface/cli/watch#method:Emitter.Stopped
+go:core/userinterface/cli/watch#method:Emitter.emit

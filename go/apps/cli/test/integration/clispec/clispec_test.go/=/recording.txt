@@ -1,0 +1,2 @@
+# observed
+# cannot tell: go-correlator (since 2026-11-16T18:55:56Z): go-correlator observe: can't tell: go-correlator: can't tell: coverage doesn't match the tree: the slice's coverage (0 covered blocks, ) holds none of the tree's modules (github.com/usegavel/gavel, github.com/usegavel/gavel/tools): a nested module the config doesn't list, or coverage of a build from another checkout or module path?

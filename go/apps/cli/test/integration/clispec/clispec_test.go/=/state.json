@@ -1,0 +1,14 @@
+{
+  "label": "apps/cli/test/integration/clispec/clispec_test.go",
+  "state": "passed",
+  "updated": "2026-11-16T18:55:56.312257509Z",
+  "seconds": 1.200749519,
+  "recorded": true,
+  "cannot_tell": [
+    {
+      "plugin": "go-correlator",
+      "reason": "go-correlator observe: can't tell: go-correlator: can't tell: coverage doesn't match the tree: the slice's coverage (0 covered blocks, ) holds none of the tree's modules (github.com/usegavel/gavel, github.com/usegavel/gavel/tools): a nested module the config doesn't list, or coverage of a build from another checkout or module path?",
+      "since": "2026-11-16T18:55:56.32051132Z"
+    }
+  ]
+}
