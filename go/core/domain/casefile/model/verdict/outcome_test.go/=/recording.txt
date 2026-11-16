@@ -1,0 +1,7 @@
+# observed
+go:core/domain/casefile/model/verdict#func:NewOutcome
+go:core/domain/casefile/model/verdict#method:Outcome.Equal
+go:core/domain/casefile/model/verdict#method:Outcome.ShouldRecordAsBaseline
+go:core/domain/casefile/model/verdict#method:Outcome.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

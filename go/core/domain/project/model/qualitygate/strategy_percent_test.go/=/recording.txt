@@ -1,0 +1,12 @@
+# observed
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/casefile/model/evidence/coverage#func:NewContent
+go:core/domain/casefile/model/evidence/coverage#method:Content.Percent
+go:core/domain/casefile/model/evidence/finding#func:NewContent
+go:core/domain/project/model/qualitygate#func:NewMinPercentage
+go:core/domain/project/model/qualitygate#func:NewOutcome
+go:core/domain/project/model/qualitygate#method:MinPercentage.Evaluate
+go:core/domain/project/model/qualitygate#method:Outcome.Detail
+go:core/domain/project/model/qualitygate#method:Outcome.Passed
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

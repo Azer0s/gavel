@@ -1,0 +1,15 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/report/checks#func:BatchAnnotations
+go:core/userinterface/cli/report/github#func:NewPublisher
+go:core/userinterface/cli/report/github#func:WithClient
+go:core/userinterface/cli/report/github#func:buildOutput
+go:core/userinterface/cli/report/github#func:isSuccessStatus
+go:core/userinterface/cli/report/github#func:remainingBatches
+go:core/userinterface/cli/report/github#method:Publisher.Publish
+go:core/userinterface/cli/report/github#method:Publisher.UpsertComment
+go:core/userinterface/cli/report/github#method:Publisher.create
+go:core/userinterface/cli/report/github#method:Publisher.findComment
+go:core/userinterface/cli/report/github#method:Publisher.request
+go:core/userinterface/cli/report/github#method:Publisher.send
+go:core/userinterface/cli/report/github#method:Publisher.update

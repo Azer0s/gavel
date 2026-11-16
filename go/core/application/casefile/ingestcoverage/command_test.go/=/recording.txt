@@ -1,0 +1,7 @@
+# observed
+go:core/application/casefile/ingestcoverage#func:NewCommand
+go:core/application/casefile/ingestcoverage#method:Command.Data
+go:core/application/casefile/ingestcoverage#method:Command.Format
+go:core/application/casefile/ingestcoverage#method:Command.Source
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

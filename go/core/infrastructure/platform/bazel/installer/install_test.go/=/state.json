@@ -1,0 +1,26 @@
+{
+  "label": "core/infrastructure/platform/bazel/installer/install_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go",
+  "updated": "2026-11-16T18:37:47.266730293Z",
+  "failures": [
+    {
+      "test": "TestInstall_ErrorWhenBazelrcUnreadable",
+      "tail": "=== RUN   TestInstall_ErrorWhenBazelrcUnreadable\n    install_test.go:323: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/platform/bazel/installer/install_test.go:323\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestInstall_ErrorWhenBazelrcUnreadable\n--- FAIL: TestInstall_ErrorWhenBazelrcUnreadable (0.00s)"
+    },
+    {
+      "test": "TestInstall_ErrorWhenBazelrcWriteFails",
+      "tail": "=== RUN   TestInstall_ErrorWhenBazelrcWriteFails\n    install_test.go:312: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/platform/bazel/installer/install_test.go:312\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestInstall_ErrorWhenBazelrcWriteFails\n--- FAIL: TestInstall_ErrorWhenBazelrcWriteFails (0.00s)"
+    },
+    {
+      "test": "TestInstall_ErrorWhenBuildFileUnreadable",
+      "tail": "=== RUN   TestInstall_ErrorWhenBuildFileUnreadable\n    install_test.go:345: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/platform/bazel/installer/install_test.go:345\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestInstall_ErrorWhenBuildFileUnreadable\n--- FAIL: TestInstall_ErrorWhenBuildFileUnreadable (0.00s)"
+    },
+    {
+      "test": "TestInstall_ErrorWhenModuleUnreadable",
+      "tail": "=== RUN   TestInstall_ErrorWhenModuleUnreadable\n    install_test.go:334: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/platform/bazel/installer/install_test.go:334\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestInstall_ErrorWhenModuleUnreadable\n--- FAIL: TestInstall_ErrorWhenModuleUnreadable (0.00s)"
+    }
+  ],
+  "seconds": 1.808100766,
+  "recorded": true
+}

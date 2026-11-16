@@ -1,0 +1,30 @@
+{
+  "label": "core/infrastructure/project/memory/baseline_store_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go",
+  "updated": "2026-11-16T18:37:39.75787876Z",
+  "failures": [
+    {
+      "test": "TestBaselineStore_SaveReturnsErrorWhenArchitectureWriteFails",
+      "tail": "=== RUN   TestBaselineStore_SaveReturnsErrorWhenArchitectureWriteFails\n    baseline_store_test.go:133: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/project/memory/baseline_store_test.go:133\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestBaselineStore_SaveReturnsErrorWhenArchitectureWriteFails\n--- FAIL: TestBaselineStore_SaveReturnsErrorWhenArchitectureWriteFails (0.00s)"
+    },
+    {
+      "test": "TestBaselineStore_SaveReturnsErrorWhenCoverageWriteFails",
+      "tail": "=== RUN   TestBaselineStore_SaveReturnsErrorWhenCoverageWriteFails\n    baseline_store_test.go:150: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/project/memory/baseline_store_test.go:150\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestBaselineStore_SaveReturnsErrorWhenCoverageWriteFails\n--- FAIL: TestBaselineStore_SaveReturnsErrorWhenCoverageWriteFails (0.00s)"
+    },
+    {
+      "test": "TestBaselineStore_SaveReturnsErrorWhenFileCoverageWriteFails",
+      "tail": "=== RUN   TestBaselineStore_SaveReturnsErrorWhenFileCoverageWriteFails\n    baseline_store_test.go:279: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/project/memory/baseline_store_test.go:279\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestBaselineStore_SaveReturnsErrorWhenFileCoverageWriteFails\n--- FAIL: TestBaselineStore_SaveReturnsErrorWhenFileCoverageWriteFails (0.00s)"
+    },
+    {
+      "test": "TestBaselineStore_SaveReturnsErrorWhenFindingsWriteFails",
+      "tail": "=== RUN   TestBaselineStore_SaveReturnsErrorWhenFindingsWriteFails\n    baseline_store_test.go:117: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/project/memory/baseline_store_test.go:117\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestBaselineStore_SaveReturnsErrorWhenFindingsWriteFails\n--- FAIL: TestBaselineStore_SaveReturnsErrorWhenFindingsWriteFails (0.00s)"
+    },
+    {
+      "test": "TestBaselineStore_SaveReturnsErrorWhenMkdirFails",
+      "tail": "=== RUN   TestBaselineStore_SaveReturnsErrorWhenMkdirFails\n    baseline_store_test.go:103: \n        \tError Trace:\tgithub.com/usegavel/gavel/core/infrastructure/project/memory/baseline_store_test.go:103\n        \tError:      \tAn error is expected but got nil.\n        \tTest:       \tTestBaselineStore_SaveReturnsErrorWhenMkdirFails\n--- FAIL: TestBaselineStore_SaveReturnsErrorWhenMkdirFails (0.00s)"
+    }
+  ],
+  "seconds": 0.949128032,
+  "recorded": true
+}

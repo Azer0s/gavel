@@ -1,0 +1,9 @@
+# observed
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/pleading/model#func:NewPleadingID
+go:core/domain/pleading/model#func:ParsePleadingID
+go:core/domain/pleading/model#method:PleadingID.Equal
+go:core/domain/pleading/model#method:PleadingID.String
+go:core/domain/pleading/model#method:PleadingID.UUID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
