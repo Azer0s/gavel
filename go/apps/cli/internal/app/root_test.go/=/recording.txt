@@ -1,0 +1,20 @@
+# observed
+go:apps/cli/internal/app#func:NewRootCommand
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/config#func:NewCommand
+go:core/userinterface/cli/initgavel#func:NewCommand
+go:core/userinterface/cli/initgavel#func:RegisterFlags
+go:core/userinterface/cli/judge#func:NewCommand
+go:core/userinterface/cli/judge#func:RegisterFlags
+go:core/userinterface/cli/judge#func:envOrDefault
+go:core/userinterface/cli/mcp#func:NewCommand
+go:core/userinterface/cli/projects#func:NewCommand
+go:core/userinterface/cli/report#func:NewCommand
+go:core/userinterface/cli/report#func:RegisterFlags
+go:core/userinterface/cli/report#func:envOrDefault
+go:core/userinterface/cli/trends#func:NewCommand
+go:core/userinterface/cli/trends#func:RegisterFlags
+go:core/userinterface/cli/trends#func:envOrDefault
+go:core/userinterface/cli/validate#func:NewCommand
+go:core/userinterface/cli/watch#func:NewCommand
+go:core/userinterface/cli/watch#func:RegisterFlags

@@ -1,0 +1,3 @@
+# observed
+go:core/userinterface/api/v1/server/ops#func:New
+go:core/userinterface/api/v1/server/ops#method:Handler.GetHealth
