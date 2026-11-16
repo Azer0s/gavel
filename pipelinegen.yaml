@@ -331,7 +331,7 @@ suites:
               eval "$(pipelinegen git-auth GITHUB_TOKEN)"
               export GOPRIVATE='github.com/sideways-works/*'
             fi
-            GOWORK=off GOFLAGS="$GOFLAGS -mod=mod" go get -modfile="$w/go.mod" github.com/sideways-works/pipelinegen-correlator-go/cover@v0.1.8-rc.12
+            GOWORK=off GOFLAGS="${GOFLAGS:-} -mod=mod" go get -modfile="$w/go.mod" github.com/sideways-works/pipelinegen-correlator-go/cover@v0.1.8-rc.12
             GOWORK=off go build -modfile="$w/go.mod" -tags pipelinegen_cover \
               -cover -covermode=atomic -coverpkg=github.com/usegavel/gavel/... \
               -o "$PIPELINEGEN_PREPARED/gavel-server" ./apps/server/cmd/gavel-server
@@ -388,6 +388,8 @@ suites:
             [ "${PIPELINEGEN_RECORD:-false}" = true ] || exit 0
             fixture=${REACT_CORRELATOR_FIXTURE:-$w/playwright.mjs}
             if [ ! -f "$fixture" ]; then
+              [ -n "${GITHUB_TOKEN:-}" ] || { echo "a recording run needs react-correlator's fixture: give the run's browser batch GITHUB_TOKEN, or name the file in REACT_CORRELATOR_FIXTURE" >&2; exit 1; }
+              command -v curl >/dev/null || { apt-get update -qq && apt-get install -y -qq curl >/dev/null; }
               api=https://api.github.com/repos/sideways-works/pipelinegen-correlator-react/releases/tags/v0.1.4-rc.14
               url=$(curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" "$api" |
                 node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const a=JSON.parse(s).assets.find(a=>a.name==="playwright.mjs");console.log(a?a.url:"")})')
