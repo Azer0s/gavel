@@ -361,7 +361,12 @@ suites:
             mkdir -p "$w/bin"
             if ! docker info >/dev/null 2>&1; then
               command -v dockerd >/dev/null || { apt-get update -qq && apt-get install -y -qq docker.io >/dev/null; }
-              setsid dockerd >"$w/dockerd.log" 2>&1 &
+              # the task's root is an overlay filesystem, on which the
+              # Docker of this image (Ubuntu's, with containerd's overlayfs
+              # snapshotter) can't unpack an image's layers: Docker's own
+              # store with the vfs driver works on any filesystem
+              printf '%s\n' '{"storage-driver": "vfs", "features": {"containerd-snapshotter": false}}' >"$w/daemon.json"
+              setsid dockerd --config-file "$w/daemon.json" --data-root "$w/docker" >"$w/dockerd.log" 2>&1 &
               echo $! >"$w/dockerd.pid"
               i=0
               until docker info >/dev/null 2>&1; do
@@ -413,9 +418,10 @@ suites:
             echo "REACT_CORRELATOR_FIXTURE=$fixture" >>"$PIPELINEGEN_EXPORT"
           stop: |
             w=$PIPELINEGEN_WORK/stack
-            [ -f "$w/container" ] && docker rm -f "$(cat "$w/container")" >/dev/null 2>&1
+            if [ -f "$w/container" ]; then docker rm -f "$(cat "$w/container")" >/dev/null 2>&1 || true; fi
             [ -f "$w/dockerd.pid" ] || exit 0
-            kill "$(cat "$w/dockerd.pid")"
+            # the driver may have stopped a daemon whose set-up failed
+            kill "$(cat "$w/dockerd.pid")" 2>/dev/null || exit 0
             i=0
             while kill -0 "$(cat "$w/dockerd.pid")" 2>/dev/null && [ "$i" -lt 6 ]; do i=$((i + 1)); sleep 1; done
       # the server, once per batch, until the batch ends
