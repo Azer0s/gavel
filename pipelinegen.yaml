@@ -105,6 +105,10 @@ plugins:
           go: {package: core/userinterface/api/v1/gen, strict: true}
   # The drivers that run the suites' steps (the command driver comes with
   # pipelinegen).
+  - name: go
+    kind: driver
+    repository: sideways-works/pipelinegen-driver-go
+    release: {version: v0.1.0-rc.3, sha256: 5945eb8a61a5a68972dce44d812bd98c394dabd26a575e9b65510ba18005971c}
   - name: shell
     kind: driver
     repository: sideways-works/pipelinegen-driver-shell
@@ -121,7 +125,9 @@ plugins:
         default: [cloud-2]
 
 suites:
-  # Go tests that need nothing but Bazel: one slice per _test.go file.
+  # Go tests that need no database: one slice per _test.go file, run by
+  # go test. Their task has no Docker daemon, so the database tests stay in
+  # the go-db suite.
   go:
     tests: ["**/*_test.go"]
     exclude:
@@ -138,7 +144,33 @@ suites:
     # only Go code runs in these tests: the TypeScript and API correlators
     # have nothing to see here, and their "can't tell" would bind every slice
     correlators: [go-correlator]
-    run_slice: ci/pipelinegen/go-batch.yml
+    image: golang
+    params:
+      GOFLAGS: -trimpath
+      GOCACHE: "{cache}/go-build"
+      GOMODCACHE: "{cache}/mod"
+    steps:
+      # What Bazel gave these tests and go test doesn't: a runfiles tree
+      # (two tests read MODULE.bazel and openapi/v1 through rules_go's
+      # runfiles), and the built gavel binary the CLI spec tests run.
+      - setup: shell
+        with:
+          timeout: 10m
+          script: |
+            mkdir -p "$PIPELINEGEN_WORK/runfiles"
+            ln -sfn "$PIPELINEGEN_TREE" "$PIPELINEGEN_WORK/runfiles/_main"
+            go build -o "$PIPELINEGEN_WORK/gavel" ./apps/cli/cmd/gavel
+            echo "RUNFILES_DIR=$PIPELINEGEN_WORK/runfiles" >>"$PIPELINEGEN_EXPORT"
+            echo "GAVEL_BINARY=$PIPELINEGEN_WORK/gavel" >>"$PIPELINEGEN_EXPORT"
+      - run: go
+        with:
+          timeout: 15m
+          cache_mb: 4096
+          modcache_mb: 3072
+          # without the binary these tests skip, and a skip passes. A
+          # pattern holds in every file, so it names exactly these tests
+          must_run:
+            apps/cli/test/integration/clispec/clispec_test.go: "^Test(AllSpecCommandsExistInBinary|AllBinaryCommandsDocumentedInSpec|AllSpecFlagsExistInBinary|AllBinaryFlagsDocumentedInSpec|FlagTypesMatchSpec|FlagShortAliasesMatchSpec|GlobalFlagsExistInBinary|UnknownFlagRejected)$"
 
   # Go tests of packages whose tests start PostgreSQL through testcontainers:
   # their batches start a Docker daemon of their own.
