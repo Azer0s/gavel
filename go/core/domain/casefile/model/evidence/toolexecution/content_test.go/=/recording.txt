@@ -1,0 +1,10 @@
+# observed
+go:core/domain/casefile/model/evidence/toolexecution#func:NewContent
+go:core/domain/casefile/model/evidence/toolexecution#func:NewFailure
+go:core/domain/casefile/model/evidence/toolexecution#func:newFailure
+go:core/domain/casefile/model/evidence/toolexecution#method:Content.Failures
+go:core/domain/casefile/model/evidence/toolexecution#method:Content.Merge
+go:core/domain/casefile/model/evidence/toolexecution#method:Content.Subtype
+go:core/domain/casefile/model/evidence/toolexecution#method:Content.Type
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
