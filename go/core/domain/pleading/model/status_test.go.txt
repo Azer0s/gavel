@@ -1,0 +1,6 @@
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/pleading/model#func:NewStatus
+go:core/domain/pleading/model#method:Status.Equal
+go:core/domain/pleading/model#method:Status.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

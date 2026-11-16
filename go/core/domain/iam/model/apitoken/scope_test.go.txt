@@ -1,0 +1,6 @@
+go:core/domain/iam/model/apitoken#func:NewScope
+go:core/domain/iam/model/apitoken#method:Scope.Equal
+go:core/domain/iam/model/apitoken#method:Scope.String
+go:core/domain/iam/model/apitoken#method:Scopes.Contains
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

@@ -1,0 +1,10 @@
+go:core/application/casefile/ingestfindings#func:NewCommand
+go:core/application/casefile/ingestfindings#method:Command.Data
+go:core/application/casefile/ingestfindings#method:Command.Format
+go:core/application/casefile/ingestfindings#method:Command.Source
+go:core/application/casefile/ingestfindings#method:Command.Subtype
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/casefile/model/evidence#func:NewSubtype
+go:core/domain/casefile/model/evidence#method:Subtype.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

@@ -1,0 +1,2 @@
+go:core/userinterface/cli/judge/output/sarif#func:Write
+go:core/userinterface/cli/judge/output/sarif#func:merge

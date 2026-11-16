@@ -1,0 +1,3 @@
+go:core/application/casefile/collectevidence#method:Handler.appendToolExecutionEvidence
+go:core/domain/casefile/model/evidence#method:Subtype.String
+go:core/domain/shared/failure#func:New

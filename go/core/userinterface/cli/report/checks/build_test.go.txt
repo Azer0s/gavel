@@ -1,0 +1,15 @@
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/report/checks#func:BatchAnnotations
+go:core/userinterface/cli/report/checks#func:Build
+go:core/userinterface/cli/report/checks#func:annotations
+go:core/userinterface/cli/report/checks#func:checkName
+go:core/userinterface/cli/report/checks#func:clampLine
+go:core/userinterface/cli/report/checks#func:conclusion
+go:core/userinterface/cli/report/checks#func:coverageCell
+go:core/userinterface/cli/report/checks#func:findingTitle
+go:core/userinterface/cli/report/checks#func:headSHA
+go:core/userinterface/cli/report/checks#func:level
+go:core/userinterface/cli/report/checks#func:summary
+go:core/userinterface/cli/report/checks#func:title
+go:core/userinterface/cli/report/checks#func:verdictMark
+go:core/userinterface/cli/report/checks#func:writeViolations

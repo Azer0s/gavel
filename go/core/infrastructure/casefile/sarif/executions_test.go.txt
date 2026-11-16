@@ -1,0 +1,9 @@
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/infrastructure/casefile/sarif#func:NewParser
+go:core/infrastructure/casefile/sarif#func:appendNotificationTexts
+go:core/infrastructure/casefile/sarif#func:degradedReason
+go:core/infrastructure/casefile/sarif#func:hasErrorNotification
+go:core/infrastructure/casefile/sarif#func:invocationReason
+go:core/infrastructure/casefile/sarif#func:isConfigurationOnly
+go:core/infrastructure/casefile/sarif#method:Parser.ParseToolExecutions
