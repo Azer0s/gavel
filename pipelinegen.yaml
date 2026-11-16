@@ -176,19 +176,6 @@ suites:
     run_slice: ci/pipelinegen/vitest-batch.yml
 
 runs:
-  # Ready pull requests into the default branch: the change merged into its
-  # tip, compared with that tip. Only the test files it reaches run.
-  pr:
-    trigger:
-      pull_requests: {base: pipelinegen, draft: false}
-    compare: merged_target
-    select: affected
-    suites: {go: {}, go-db: {}, web: {}, browser: {}, vitest: {}}
-    record: true
-    report:
-      comment: {format: mermaid}
-      reasoning: true
-
   # Every commit on the default branch, compared with the last one whose run
   # passed. Its recordings become the lists the next plans read.
   main:
