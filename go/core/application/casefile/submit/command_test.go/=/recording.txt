@@ -1,0 +1,5 @@
+# observed
+go:core/application/casefile/submit#func:NewCommand
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

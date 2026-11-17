@@ -1,0 +1,5 @@
+# observed
+go:core/userinterface/cli/mcp/tools#func:formatJudgeOutput
+go:core/userinterface/cli/mcp/tools#func:formatSeverities
+go:core/userinterface/cli/mcp/tools#func:writeCoverageTree
+go:core/userinterface/cli/mcp/tools#func:writeFindingsTree

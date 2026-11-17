@@ -1,0 +1,16 @@
+# observed
+go:core/application/pleading/resolve#func:applyTransition
+go:core/application/pleading/resolve#method:Command.TenantID
+go:core/application/pleading/resolve#method:Handler.Execute
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/iam/model/tenant#method:TenantID.IsZero
+go:core/domain/pleading/model#func:FilePleading
+go:core/domain/pleading/model#func:NewPleadingID
+go:core/domain/pleading/model#func:validatePleadingFields
+go:core/domain/pleading/model#method:Pleading.ID
+go:core/domain/pleading/model#method:PleadingID.String
+go:core/domain/pleading/model#method:Status.String
+go:core/domain/project/model#func:NewProjectID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

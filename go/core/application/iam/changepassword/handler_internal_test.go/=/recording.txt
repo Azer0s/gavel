@@ -1,0 +1,26 @@
+# observed
+go:core/application/iam/changepassword#func:NewHandler
+go:core/application/iam/changepassword#method:Command.CurrentPassword
+go:core/application/iam/changepassword#method:Command.NewPassword
+go:core/application/iam/changepassword#method:Command.OccurredAt
+go:core/application/iam/changepassword#method:Command.UserID
+go:core/application/iam/changepassword#method:Handler.Execute
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/user#func:NewEmail
+go:core/domain/iam/model/user#func:NewPasswordChanged
+go:core/domain/iam/model/user#func:NewPasswordHash
+go:core/domain/iam/model/user#func:NewUser
+go:core/domain/iam/model/user#func:NewUserCreated
+go:core/domain/iam/model/user#func:NewUserID
+go:core/domain/iam/model/user#func:ParseUserID
+go:core/domain/iam/model/user#func:containsWhitespace
+go:core/domain/iam/model/user#func:splitOnceAtSign
+go:core/domain/iam/model/user#func:validateUserFields
+go:core/domain/iam/model/user#method:User.ChangePassword
+go:core/domain/iam/model/user#method:User.ClearEvents
+go:core/domain/iam/model/user#method:User.Events
+go:core/domain/iam/model/user#method:User.ID
+go:core/domain/iam/model/user#method:User.PasswordHash
+go:core/domain/iam/model/user#method:UserID.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

@@ -1,0 +1,11 @@
+# observed
+go:core/domain/iam/model/apitoken#func:HashSecret
+go:core/domain/iam/model/apitoken#func:NewSecret
+go:core/domain/iam/model/apitoken#func:NewSecretHash
+go:core/domain/iam/model/apitoken#method:Secret.Equal
+go:core/domain/iam/model/apitoken#method:Secret.Prefix
+go:core/domain/iam/model/apitoken#method:Secret.String
+go:core/domain/iam/model/apitoken#method:SecretHash.Equal
+go:core/domain/iam/model/apitoken#method:SecretHash.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

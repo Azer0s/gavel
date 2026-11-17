@@ -1,0 +1,14 @@
+{
+  "label": "core/userinterface/cli/mcp/tools/lint_test.go",
+  "state": "passed",
+  "updated": "2026-11-17T03:06:13.45347332Z",
+  "seconds": 1.8440809759999999,
+  "recorded": true,
+  "cannot_tell": [
+    {
+      "plugin": "correlators",
+      "reason": "2 tests ran and nothing was recorded",
+      "since": "2026-11-17T03:06:13.453552519Z"
+    }
+  ]
+}

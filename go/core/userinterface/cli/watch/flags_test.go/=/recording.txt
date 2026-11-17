@@ -1,0 +1,3 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/watch#func:RegisterFlags
