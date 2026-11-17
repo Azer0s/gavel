@@ -1,0 +1,18 @@
+# observed
+go:core/domain/project/model/archpolicy#func:NewDenyRule
+go:core/domain/project/model/archpolicy#func:NewLayer
+go:core/domain/project/model/archpolicy#func:NewPolicy
+go:core/domain/project/model/archpolicy#func:buildLayerNameSet
+go:core/domain/project/model/archpolicy#func:validateNoDuplicateLayerNames
+go:core/domain/project/model/archpolicy#func:validateRulesReferenceExistingLayers
+go:core/domain/project/model/archpolicy#method:Policy.DenyRules
+go:core/domain/project/model/archpolicy#method:Policy.Layers
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/infrastructure/project/archconfig#func:NewPolicyLoader
+go:core/infrastructure/project/archconfig#func:Parse
+go:core/infrastructure/project/archconfig#func:ParseFile
+go:core/infrastructure/project/archconfig#func:buildLayers
+go:core/infrastructure/project/archconfig#func:buildRules
+go:core/infrastructure/project/archconfig#func:mapToDomain
+go:core/infrastructure/project/archconfig#method:PolicyLoader.LoadPolicy

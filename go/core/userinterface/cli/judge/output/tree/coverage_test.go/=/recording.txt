@@ -1,0 +1,6 @@
+# observed
+go:core/userinterface/cli/judge/output/tree#func:BuildCoverageTree
+go:core/userinterface/cli/judge/output/tree#func:aggregate
+go:core/userinterface/cli/judge/output/tree#func:ensureDir
+go:core/userinterface/cli/judge/output/tree#func:roundPercent
+go:core/userinterface/cli/judge/output/tree#func:sortTree

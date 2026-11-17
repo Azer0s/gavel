@@ -1,0 +1,5 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/userinterface/api/v1/server/httpx/auth#method:SessionCookie.Clear
+go:core/userinterface/api/v1/server/httpx/auth#method:SessionCookie.Read
+go:core/userinterface/api/v1/server/httpx/auth#method:SessionCookie.Set
