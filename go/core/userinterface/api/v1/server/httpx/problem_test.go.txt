@@ -1,0 +1,7 @@
+go:core/userinterface/api/v1/server/httpx#func:BadRequest
+go:core/userinterface/api/v1/server/httpx#func:CurrentPasswordIncorrect
+go:core/userinterface/api/v1/server/httpx#func:InvalidCredentials
+go:core/userinterface/api/v1/server/httpx#func:NewProblem
+go:core/userinterface/api/v1/server/httpx#func:NotFound
+go:core/userinterface/api/v1/server/httpx#func:Unauthorized
+go:core/userinterface/api/v1/server/httpx#func:WriteProblem

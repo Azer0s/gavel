@@ -1,0 +1,4 @@
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/infrastructure/casefile/lcov#func:ParsePerLine
+go:core/infrastructure/casefile/lcov#func:parseDARecord

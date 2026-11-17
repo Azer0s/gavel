@@ -1,0 +1,16 @@
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#method:TenantID.IsZero
+go:core/domain/iam/model/tenant#method:TenantID.String
+go:core/domain/pleading/model#func:FilePleading
+go:core/domain/pleading/model#func:NewPleadingID
+go:core/domain/pleading/model#func:validatePleadingFields
+go:core/domain/pleading/model#method:Pleading.ID
+go:core/domain/pleading/model#method:Pleading.TenantID
+go:core/domain/pleading/model#method:Pleading.Title
+go:core/domain/pleading/model#method:PleadingID.String
+go:core/domain/project/model#func:NewProjectID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/infrastructure/pleading/memory#func:NewPleadingRepository
+go:core/infrastructure/pleading/memory#method:PleadingRepository.FindByID
+go:core/infrastructure/pleading/memory#method:PleadingRepository.Save

@@ -1,0 +1,10 @@
+go:core/application/casefile/get#func:NewHandler
+go:core/application/casefile/get#func:NewQuery
+go:core/application/casefile/get#method:Handler.Execute
+go:core/application/casefile/get#method:Query.ID
+go:core/application/casefile/get#method:Query.TenantID
+go:core/domain/iam/model/tenant#func:ParseTenantID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#func:Of
+go:core/domain/shared/failure#method:sentinel.Error
+go:core/domain/shared/failure#method:sentinel.Kind

@@ -1,0 +1,13 @@
+go:tools/clispec-gen#func:buildFlagData
+go:tools/clispec-gen#func:cobraMethod
+go:tools/clispec-gen#func:execute
+go:tools/clispec-gen#func:fieldName
+go:tools/clispec-gen#func:formatStringSlice
+go:tools/clispec-gen#func:generateCommand
+go:tools/clispec-gen#func:goDefault
+go:tools/clispec-gen#func:goType
+go:tools/clispec-gen#func:isAcronym
+go:tools/clispec-gen#func:kebabToPascal
+go:tools/clispec-gen#func:parseDuration
+go:tools/clispec-gen#func:run
+go:tools/clispec-gen#func:singleLine

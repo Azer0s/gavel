@@ -1,0 +1,3 @@
+go:core/domain/shared/failure#func:New
+go:core/userinterface/api/v1/server/httpx/auth#func:PrincipalFromContext
+go:core/userinterface/api/v1/server/httpx/auth#func:WithPrincipal

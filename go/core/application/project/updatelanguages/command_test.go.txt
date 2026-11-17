@@ -1,0 +1,10 @@
+go:core/application/project/updatelanguages#func:NewCommand
+go:core/application/project/updatelanguages#func:parseLanguages
+go:core/application/project/updatelanguages#method:Command.Languages
+go:core/application/project/updatelanguages#method:Command.ProjectID
+go:core/domain/casefile/model/evidence/coverage#func:NewLanguage
+go:core/domain/casefile/model/evidence/coverage#method:Language.String
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#method:TenantID.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

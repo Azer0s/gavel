@@ -1,0 +1,7 @@
+go:core/domain/casefile/model/evidence/architecture#func:NewViolation
+go:core/domain/casefile/model/evidence/architecture#method:Violation.Message
+go:core/domain/casefile/model/evidence/architecture#method:Violation.Rule
+go:core/domain/casefile/model/evidence/architecture#method:Violation.SourcePkg
+go:core/domain/casefile/model/evidence/architecture#method:Violation.TargetPkg
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

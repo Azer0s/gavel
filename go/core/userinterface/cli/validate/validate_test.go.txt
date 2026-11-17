@@ -1,0 +1,2 @@
+go:core/userinterface/cli/validate#func:NewCommand
+go:core/userinterface/cli/validate#func:run
