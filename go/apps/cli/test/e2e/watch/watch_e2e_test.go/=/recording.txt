@@ -1,0 +1,26 @@
+# observed
+go:core/application/supporting/analyzetarget#func:NewCommand
+go:core/application/supporting/analyzetarget#func:NewHandler
+go:core/application/supporting/analyzetarget#method:Command.Languages
+go:core/application/supporting/analyzetarget#method:Command.Target
+go:core/application/supporting/analyzetarget#method:Command.Workspace
+go:core/application/supporting/analyzetarget#method:Handler.Execute
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/watch#func:NewEmitter
+go:core/userinterface/cli/watch#func:NewFileWatcher
+go:core/userinterface/cli/watch#func:Run
+go:core/userinterface/cli/watch#func:analyzeAndEmit
+go:core/userinterface/cli/watch#func:detectBazelVersion
+go:core/userinterface/cli/watch#func:shouldIgnore
+go:core/userinterface/cli/watch#func:shouldIgnoreDir
+go:core/userinterface/cli/watch#method:Emitter.Affected
+go:core/userinterface/cli/watch#method:Emitter.AnalysisDone
+go:core/userinterface/cli/watch#method:Emitter.AnalysisFailed
+go:core/userinterface/cli/watch#method:Emitter.AnalysisStarted
+go:core/userinterface/cli/watch#method:Emitter.Changed
+go:core/userinterface/cli/watch#method:Emitter.Finding
+go:core/userinterface/cli/watch#method:Emitter.Started
+go:core/userinterface/cli/watch#method:Emitter.Stopped
+go:core/userinterface/cli/watch#method:Emitter.emit
+go:core/userinterface/cli/watch#method:FileWatcher.Run
+go:core/userinterface/cli/watch#method:FileWatcher.addRecursive

@@ -1,0 +1,20 @@
+# observed
+go:core/domain/gavelspace/model#func:NewCoverageOptions
+go:core/domain/gavelspace/model#func:NewGavelspace
+go:core/domain/gavelspace/model#func:NewGavelspaceID
+go:core/domain/gavelspace/model#func:NewServerConfig
+go:core/domain/gavelspace/model#method:CoverageOptions.InstrumentationFilter
+go:core/domain/gavelspace/model#method:CoverageOptions.TestSizeFilters
+go:core/domain/gavelspace/model#method:CoverageOptions.TestTagFilters
+go:core/domain/gavelspace/model#method:Gavelspace.BazelConfigs
+go:core/domain/gavelspace/model#method:Gavelspace.FindingsSource
+go:core/domain/gavelspace/model#method:Gavelspace.ServerConfig
+go:core/domain/gavelspace/model#method:Gavelspace.SetBazelConfigs
+go:core/domain/gavelspace/model#method:Gavelspace.SetFindingsSource
+go:core/domain/gavelspace/model#method:Gavelspace.SetServerConfig
+go:core/domain/gavelspace/model#method:ServerConfig.IsConfigured
+go:core/domain/gavelspace/model#method:ServerConfig.Token
+go:core/domain/gavelspace/model#method:ServerConfig.URL
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#method:TenantID.IsZero
+go:core/domain/shared/failure#func:New
