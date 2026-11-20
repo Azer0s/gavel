@@ -1,0 +1,9 @@
+# observed
+go:core/userinterface/cli/ui#func:FormatDuration
+go:core/userinterface/cli/ui#func:IsTerminal
+go:core/userinterface/cli/ui#func:NewSpinner
+go:core/userinterface/cli/ui#func:NewSpinnerWithMessage
+go:core/userinterface/cli/ui#func:ThemeGavel
+go:core/userinterface/cli/ui#method:Spinner.Elapsed
+go:core/userinterface/cli/ui#method:Spinner.Run
+go:core/userinterface/cli/ui#method:Spinner.Stop
