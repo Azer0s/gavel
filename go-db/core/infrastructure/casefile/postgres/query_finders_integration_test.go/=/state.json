@@ -1,0 +1,55 @@
+{
+  "label": "core/infrastructure/casefile/postgres/query_finders_integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:29.942353506Z",
+  "failures": [
+    {
+      "test": "TestCaseFileQueryGetByID",
+      "tail": "=== RUN   TestCaseFileQueryGetByID\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileQueryGetByID (0.00s)\nTestCaseFileQueryGetByID in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileQueryGetByIDNotFound",
+      "tail": "=== RUN   TestCaseFileQueryGetByIDNotFound\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileQueryGetByIDNotFound (0.00s)\nTestCaseFileQueryGetByIDNotFound in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileQueryGetByIDWithCoverage",
+      "tail": "=== RUN   TestCaseFileQueryGetByIDWithCoverage\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileQueryGetByIDWithCoverage (0.00s)\nTestCaseFileQueryGetByIDWithCoverage in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileQueryListByProject",
+      "tail": "=== RUN   TestCaseFileQueryListByProject\nWARN: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\ncontext deadline exceeded\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileQueryListByProject (30.12s)\nTestCaseFileQueryListByProject in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileQueryListByProjectWithGavelspaceFilter",
+      "tail": "=== RUN   TestCaseFileQueryListByProjectWithGavelspaceFilter\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileQueryListByProjectWithGavelspaceFilter (0.00s)\nTestCaseFileQueryListByProjectWithGavelspaceFilter in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestFindingQueryList",
+      "tail": "=== RUN   TestFindingQueryList\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFindingQueryList (0.00s)\nTestFindingQueryList in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestFindingQueryListFilterByFilePath",
+      "tail": "=== RUN   TestFindingQueryListFilterByFilePath\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFindingQueryListFilterByFilePath (0.00s)\nTestFindingQueryListFilterByFilePath in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestFindingQueryListFilterByGavelspace",
+      "tail": "=== RUN   TestFindingQueryListFilterByGavelspace\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFindingQueryListFilterByGavelspace (0.00s)\nTestFindingQueryListFilterByGavelspace in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestFindingQueryListFilterByProjectID",
+      "tail": "=== RUN   TestFindingQueryListFilterByProjectID\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFindingQueryListFilterByProjectID (0.00s)\nTestFindingQueryListFilterByProjectID in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "TestFindingQueryListFilterByStatus",
+      "tail": "=== RUN   TestFindingQueryListFilterByStatus\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFindingQueryListFilterByStatus (0.00s)\nTestFindingQueryListFilterByStatus in core/infrastructure/casefile/postgres/query_finders_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/query_finders_integration_test.go holds ."
+    },
+    {
+      "test": "(3 more)",
+      "tail": ""
+    }
+  ],
+  "seconds": 31.934982923,
+  "recorded": true,
+  "cpu_seconds": 6.921432999999979
+}

@@ -1,0 +1,12 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/casefile/sarif#func:ParseArchitectureViolations
+go:core/infrastructure/platform/bazel/catalog#func:IsArchtestAspect
+go:core/infrastructure/platform/bazel/catalog#func:ParseCatalog
+go:core/infrastructure/platform/bazel/catalog#func:SelectedAspects
+go:core/infrastructure/platform/bazel/catalog#func:active
+go:core/infrastructure/platform/bazel/catalog#func:loadEmbedded
+go:core/infrastructure/platform/bazel/catalog#method:Catalog.aspectFor
+go:core/infrastructure/platform/bazel/catalog#method:Catalog.selectedAspects
+go:core/infrastructure/platform/bazel/collector#func:NewBazelArchitectureCollector
+go:core/infrastructure/platform/bazel/collector#method:BazelArchitectureCollector.CollectViolations

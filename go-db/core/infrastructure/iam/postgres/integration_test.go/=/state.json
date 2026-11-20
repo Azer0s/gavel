@@ -1,0 +1,55 @@
+{
+  "label": "core/infrastructure/iam/postgres/integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:29.678119456Z",
+  "failures": [
+    {
+      "test": "TestAPITokenByIDReturnsErrorOnCancelledContext",
+      "tail": "=== RUN   TestAPITokenByIDReturnsErrorOnCancelledContext\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenByIDReturnsErrorOnCancelledContext (0.00s)\nTestAPITokenByIDReturnsErrorOnCancelledContext in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenListByUserReturnsErrorOnCancelledContext",
+      "tail": "=== RUN   TestAPITokenListByUserReturnsErrorOnCancelledContext\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenListByUserReturnsErrorOnCancelledContext (0.00s)\nTestAPITokenListByUserReturnsErrorOnCancelledContext in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenListByUserReturnsErrorOnCorruptedScopesJSON",
+      "tail": "=== RUN   TestAPITokenListByUserReturnsErrorOnCorruptedScopesJSON\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenListByUserReturnsErrorOnCorruptedScopesJSON (0.00s)\nTestAPITokenListByUserReturnsErrorOnCorruptedScopesJSON in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenListByUserReturnsErrorOnCorruptedTokenHash",
+      "tail": "=== RUN   TestAPITokenListByUserReturnsErrorOnCorruptedTokenHash\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenListByUserReturnsErrorOnCorruptedTokenHash (0.00s)\nTestAPITokenListByUserReturnsErrorOnCorruptedTokenHash in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenListByUserReturnsErrorOnInvalidScope",
+      "tail": "=== RUN   TestAPITokenListByUserReturnsErrorOnInvalidScope\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenListByUserReturnsErrorOnInvalidScope (0.00s)\nTestAPITokenListByUserReturnsErrorOnInvalidScope in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenRepoByTokenHashNotFound",
+      "tail": "=== RUN   TestAPITokenRepoByTokenHashNotFound\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenRepoByTokenHashNotFound (0.00s)\nTestAPITokenRepoByTokenHashNotFound in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenRepoLastUsedAtRoundTrip",
+      "tail": "=== RUN   TestAPITokenRepoLastUsedAtRoundTrip\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenRepoLastUsedAtRoundTrip (0.00s)\nTestAPITokenRepoLastUsedAtRoundTrip in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenRepoListByUserEmpty",
+      "tail": "=== RUN   TestAPITokenRepoListByUserEmpty\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenRepoListByUserEmpty (0.00s)\nTestAPITokenRepoListByUserEmpty in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenRepoListByUserOrdering",
+      "tail": "=== RUN   TestAPITokenRepoListByUserOrdering\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenRepoListByUserOrdering (0.00s)\nTestAPITokenRepoListByUserOrdering in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "TestAPITokenRepoRevokedTokenRoundTrip",
+      "tail": "=== RUN   TestAPITokenRepoRevokedTokenRoundTrip\n    integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestAPITokenRepoRevokedTokenRoundTrip (0.00s)\nTestAPITokenRepoRevokedTokenRoundTrip in core/infrastructure/iam/postgres/integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/integration_test.go holds ."
+    },
+    {
+      "test": "(30 more)",
+      "tail": ""
+    }
+  ],
+  "seconds": 31.91566796,
+  "recorded": true,
+  "cpu_seconds": 6.1456560000000025
+}

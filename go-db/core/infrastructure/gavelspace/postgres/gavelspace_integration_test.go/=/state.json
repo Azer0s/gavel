@@ -1,0 +1,55 @@
+{
+  "label": "core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:30.403628157Z",
+  "failures": [
+    {
+      "test": "TestFinderFindGavelspaceNameByProjectID",
+      "tail": "=== RUN   TestFinderFindGavelspaceNameByProjectID\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderFindGavelspaceNameByProjectID (0.00s)\nTestFinderFindGavelspaceNameByProjectID in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderFindGavelspaceNameByProjectIDNotFound",
+      "tail": "=== RUN   TestFinderFindGavelspaceNameByProjectIDNotFound\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderFindGavelspaceNameByProjectIDNotFound (0.00s)\nTestFinderFindGavelspaceNameByProjectIDNotFound in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderFindGavelspaceNameByProjectIDReturnsErrorOnCancelledContext",
+      "tail": "=== RUN   TestFinderFindGavelspaceNameByProjectIDReturnsErrorOnCancelledContext\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderFindGavelspaceNameByProjectIDReturnsErrorOnCancelledContext (0.00s)\nTestFinderFindGavelspaceNameByProjectIDReturnsErrorOnCancelledContext in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderGetByName",
+      "tail": "=== RUN   TestFinderGetByName\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderGetByName (0.00s)\nTestFinderGetByName in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderGetByNameNotFound",
+      "tail": "=== RUN   TestFinderGetByNameNotFound\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderGetByNameNotFound (0.00s)\nTestFinderGetByNameNotFound in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderGetByNameReturnsErrorOnCancelledContext",
+      "tail": "=== RUN   TestFinderGetByNameReturnsErrorOnCancelledContext\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderGetByNameReturnsErrorOnCancelledContext (0.00s)\nTestFinderGetByNameReturnsErrorOnCancelledContext in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderGetByNameReturnsErrorOnCorruptedCreatedAt",
+      "tail": "=== RUN   TestFinderGetByNameReturnsErrorOnCorruptedCreatedAt\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderGetByNameReturnsErrorOnCorruptedCreatedAt (0.00s)\nTestFinderGetByNameReturnsErrorOnCorruptedCreatedAt in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderGetByNameReturnsErrorOnProjectRefQueryFailure",
+      "tail": "=== RUN   TestFinderGetByNameReturnsErrorOnProjectRefQueryFailure\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderGetByNameReturnsErrorOnProjectRefQueryFailure (0.00s)\nTestFinderGetByNameReturnsErrorOnProjectRefQueryFailure in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderGetByNameWithEmptyProjects",
+      "tail": "=== RUN   TestFinderGetByNameWithEmptyProjects\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderGetByNameWithEmptyProjects (0.00s)\nTestFinderGetByNameWithEmptyProjects in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "TestFinderGetByNameWithLatestVerdict",
+      "tail": "=== RUN   TestFinderGetByNameWithLatestVerdict\n    gavelspace_integration_test.go:29: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestFinderGetByNameWithLatestVerdict (0.00s)\nTestFinderGetByNameWithLatestVerdict in core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go skipped, and must_run says it must run: core/infrastructure/gavelspace/postgres/gavelspace_integration_test.go holds ."
+    },
+    {
+      "test": "(15 more)",
+      "tail": ""
+    }
+  ],
+  "seconds": 31.693163474,
+  "recorded": true,
+  "cpu_seconds": 6.628361999999981
+}

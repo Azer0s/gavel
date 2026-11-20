@@ -1,0 +1,55 @@
+{
+  "label": "core/infrastructure/casefile/postgres/error_paths_integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:29.675761264Z",
+  "failures": [
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnCancelledContext",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnCancelledContext\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnCancelledContext (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnCancelledContext in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnCorruptedCreatedAt",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnCorruptedCreatedAt\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnCorruptedCreatedAt (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnCorruptedCreatedAt in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnCorruptedStartedAt",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnCorruptedStartedAt\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnCorruptedStartedAt (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnCorruptedStartedAt in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnEvidenceCollectedAtCorruption",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnEvidenceCollectedAtCorruption\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnEvidenceCollectedAtCorruption (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnEvidenceCollectedAtCorruption in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnEvidenceQueryFailure",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnEvidenceQueryFailure\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnEvidenceQueryFailure (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnEvidenceQueryFailure in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnEvidenceSourceCorruption",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnEvidenceSourceCorruption\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnEvidenceSourceCorruption (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnEvidenceSourceCorruption in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnRulingsQueryFailure",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnRulingsQueryFailure\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnRulingsQueryFailure (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnRulingsQueryFailure in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsErrorOnRulingsScanCorruption",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsErrorOnRulingsScanCorruption\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsErrorOnRulingsScanCorruption (0.00s)\nTestCaseFileFinderGetByIDReturnsErrorOnRulingsScanCorruption in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderGetByIDReturnsNotFoundForMissingCaseFile",
+      "tail": "=== RUN   TestCaseFileFinderGetByIDReturnsNotFoundForMissingCaseFile\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderGetByIDReturnsNotFoundForMissingCaseFile (0.00s)\nTestCaseFileFinderGetByIDReturnsNotFoundForMissingCaseFile in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileFinderListByProjectReturnsErrorOnCorruptedStartedAt",
+      "tail": "=== RUN   TestCaseFileFinderListByProjectReturnsErrorOnCorruptedStartedAt\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileFinderListByProjectReturnsErrorOnCorruptedStartedAt (0.00s)\nTestCaseFileFinderListByProjectReturnsErrorOnCorruptedStartedAt in core/infrastructure/casefile/postgres/error_paths_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/error_paths_integration_test.go holds ."
+    },
+    {
+      "test": "(37 more)",
+      "tail": ""
+    }
+  ],
+  "seconds": 145.826913427,
+  "recorded": true,
+  "cpu_seconds": 202.73181399999999
+}

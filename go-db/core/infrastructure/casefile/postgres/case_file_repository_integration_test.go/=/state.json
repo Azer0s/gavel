@@ -1,0 +1,55 @@
+{
+  "label": "core/infrastructure/casefile/postgres/case_file_repository_integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:30.402805943Z",
+  "failures": [
+    {
+      "test": "TestCaseFileRepoFindByIDNotFound",
+      "tail": "=== RUN   TestCaseFileRepoFindByIDNotFound\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoFindByIDNotFound (0.00s)\nTestCaseFileRepoFindByIDNotFound in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoFindByProject",
+      "tail": "=== RUN   TestCaseFileRepoFindByProject\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoFindByProject (0.00s)\nTestCaseFileRepoFindByProject in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoFindFingerprintsByBranch",
+      "tail": "=== RUN   TestCaseFileRepoFindFingerprintsByBranch\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoFindFingerprintsByBranch (0.00s)\nTestCaseFileRepoFindFingerprintsByBranch in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoFindFingerprintsByBranchEmpty",
+      "tail": "=== RUN   TestCaseFileRepoFindFingerprintsByBranchEmpty\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoFindFingerprintsByBranchEmpty (0.00s)\nTestCaseFileRepoFindFingerprintsByBranchEmpty in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoFindLatestByBranch",
+      "tail": "=== RUN   TestCaseFileRepoFindLatestByBranch\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoFindLatestByBranch (0.00s)\nTestCaseFileRepoFindLatestByBranch in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoFindLatestByBranchNotFound",
+      "tail": "=== RUN   TestCaseFileRepoFindLatestByBranchNotFound\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoFindLatestByBranchNotFound (0.00s)\nTestCaseFileRepoFindLatestByBranchNotFound in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoRoundTripPreservesFreshEvaluation",
+      "tail": "=== RUN   TestCaseFileRepoRoundTripPreservesFreshEvaluation\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoRoundTripPreservesFreshEvaluation (0.00s)\nTestCaseFileRepoRoundTripPreservesFreshEvaluation in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoSaveAndFindByID",
+      "tail": "=== RUN   TestCaseFileRepoSaveAndFindByID\nWARN: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\ncontext deadline exceeded\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoSaveAndFindByID (63.85s)\nTestCaseFileRepoSaveAndFindByID in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoSaveIsIdempotentForArchViolations",
+      "tail": "=== RUN   TestCaseFileRepoSaveIsIdempotentForArchViolations\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoSaveIsIdempotentForArchViolations (0.00s)\nTestCaseFileRepoSaveIsIdempotentForArchViolations in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "TestCaseFileRepoSaveIsIdempotentForCoverageByLanguage",
+      "tail": "=== RUN   TestCaseFileRepoSaveIsIdempotentForCoverageByLanguage\n    test_helpers_test.go:28: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestCaseFileRepoSaveIsIdempotentForCoverageByLanguage (0.00s)\nTestCaseFileRepoSaveIsIdempotentForCoverageByLanguage in core/infrastructure/casefile/postgres/case_file_repository_integration_test.go skipped, and must_run says it must run: core/infrastructure/casefile/postgres/case_file_repository_integration_test.go holds ."
+    },
+    {
+      "test": "(12 more)",
+      "tail": ""
+    }
+  ],
+  "seconds": 137.706949393,
+  "recorded": true,
+  "cpu_seconds": 202.065676
+}

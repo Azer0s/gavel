@@ -1,0 +1,9 @@
+# observed
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/casefile/model/evidence#func:NewSubtype
+go:core/domain/casefile/model/evidence#method:Subtype.Equal
+go:core/domain/casefile/model/evidence#method:Subtype.String
+go:core/domain/casefile/model/evidence#method:Subtype.Type
+go:core/domain/casefile/model/evidence#method:Type.Equal
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

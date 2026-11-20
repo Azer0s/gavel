@@ -1,0 +1,7 @@
+# observed
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/platform/database#func:MigrationsFingerprint
+go:core/infrastructure/platform/database/testkit#func:TestDB
+go:core/infrastructure/platform/database/testkit#func:initialize
+go:core/infrastructure/platform/database/testkit#func:skipOrFail
+go:core/infrastructure/platform/database/testkit#func:startPostgresContainer
