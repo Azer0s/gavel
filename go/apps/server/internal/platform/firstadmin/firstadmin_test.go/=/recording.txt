@@ -1,0 +1,6 @@
+# observed
+go:apps/server/internal/platform/firstadmin#func:ResolvePassword
+go:core/domain/shared/failure#func:New
+go:core/infrastructure/iam/crypto#func:NewSecretGenerator
+go:core/infrastructure/iam/crypto#method:SecretGenerator.NewRandomSecret
+go:core/infrastructure/iam/crypto#method:SecretGenerator.randomBase64Body
