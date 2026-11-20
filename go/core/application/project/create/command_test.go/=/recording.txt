@@ -1,0 +1,9 @@
+# observed
+go:core/application/project/create#func:NewCommand
+go:core/application/project/create#method:Command.Key
+go:core/application/project/create#method:Command.Name
+go:core/application/project/create#method:Command.TargetPattern
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/iam/model/tenant#method:TenantID.String
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
