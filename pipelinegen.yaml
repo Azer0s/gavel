@@ -132,8 +132,8 @@ plugins:
         config:
           placement:
             # every step of this pipeline, the resources' checks included, on
-            # the workers tagged cloud-2
-            default: [cloud-2]
+            # the workers tagged cloud
+            default: [cloud]
 
 suites:
   # Go tests that need no database: one slice per _test.go file, run by

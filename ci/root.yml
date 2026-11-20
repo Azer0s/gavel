@@ -5,15 +5,15 @@ resources:
   - name: golang
     type: registry-image
     icon: language-go
-    tags: [cloud-2]
+    tags: [cloud]
     source: {repository: golang, tag: 1.25.7-bookworm}
   - name: node
     type: registry-image
     icon: nodejs
-    tags: [cloud-2]
+    tags: [cloud]
     source: {repository: node, tag: 24.22.3-bookworm}
   - name: playwright
     type: registry-image
     icon: web
-    tags: [cloud-2]
+    tags: [cloud]
     source: {repository: mcr.microsoft.com/playwright, tag: v1.60.0-noble}
