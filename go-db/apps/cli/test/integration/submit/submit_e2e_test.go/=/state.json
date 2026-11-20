@@ -1,0 +1,23 @@
+{
+  "label": "apps/cli/test/integration/submit/submit_e2e_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:29.941962823Z",
+  "failures": [
+    {
+      "test": "TestSubmitFlow_DoubleFinalizeIsRejected",
+      "tail": "=== RUN   TestSubmitFlow_DoubleFinalizeIsRejected\n    submit_e2e_test.go:103: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestSubmitFlow_DoubleFinalizeIsRejected (0.00s)\nTestSubmitFlow_DoubleFinalizeIsRejected in apps/cli/test/integration/submit/submit_e2e_test.go skipped, and must_run says it must run: apps/cli/test/integration/submit/submit_e2e_test.go holds ."
+    },
+    {
+      "test": "TestSubmitFlow_FreshEvaluationSkipsClassify",
+      "tail": "=== RUN   TestSubmitFlow_FreshEvaluationSkipsClassify\n    submit_e2e_test.go:66: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestSubmitFlow_FreshEvaluationSkipsClassify (0.00s)\nTestSubmitFlow_FreshEvaluationSkipsClassify in apps/cli/test/integration/submit/submit_e2e_test.go skipped, and must_run says it must run: apps/cli/test/integration/submit/submit_e2e_test.go holds ."
+    },
+    {
+      "test": "TestSubmitFlow_HappyPathProducesVerdict",
+      "tail": "=== RUN   TestSubmitFlow_HappyPathProducesVerdict\nWARN: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\ncontext deadline exceeded\n    submit_e2e_test.go:27: database: container runtime unavailable: run postgres: generic container: start container: started hook: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestSubmitFlow_HappyPathProducesVerdict (56.16s)\nTestSubmitFlow_HappyPathProducesVerdict in apps/cli/test/integration/submit/submit_e2e_test.go skipped, and must_run says it must run: apps/cli/test/integration/submit/submit_e2e_test.go holds ."
+    }
+  ],
+  "seconds": 127.276028819,
+  "recorded": true,
+  "cpu_seconds": 199.93534599999998
+}

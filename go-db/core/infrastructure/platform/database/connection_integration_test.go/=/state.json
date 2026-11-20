@@ -1,0 +1,55 @@
+{
+  "label": "core/infrastructure/platform/database/connection_integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:29.94286582Z",
+  "failures": [
+    {
+      "test": "TestBeginTxAndCommit",
+      "tail": "=== RUN   TestBeginTxAndCommit\n    connection_integration_test.go:51: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestBeginTxAndCommit (0.00s)\nTestBeginTxAndCommit in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestBeginTxAndRollback",
+      "tail": "=== RUN   TestBeginTxAndRollback\n    connection_integration_test.go:64: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestBeginTxAndRollback (0.00s)\nTestBeginTxAndRollback in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestBeginTxReturnsErrorOnCancelledContext",
+      "tail": "=== RUN   TestBeginTxReturnsErrorOnCancelledContext\n    connection_integration_test.go:134: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestBeginTxReturnsErrorOnCancelledContext (0.00s)\nTestBeginTxReturnsErrorOnCancelledContext in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestDBQueryContext",
+      "tail": "=== RUN   TestDBQueryContext\n    connection_integration_test.go:183: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestDBQueryContext (0.00s)\nTestDBQueryContext in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestDBQueryRowContext",
+      "tail": "=== RUN   TestDBQueryRowContext\n    connection_integration_test.go:107: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestDBQueryRowContext (0.00s)\nTestDBQueryRowContext in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestMigrateAppliesSchemaToFreshDB",
+      "tail": "=== RUN   TestMigrateAppliesSchemaToFreshDB\n    connection_integration_test.go:79: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestMigrateAppliesSchemaToFreshDB (0.00s)\nTestMigrateAppliesSchemaToFreshDB in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestMigrateRecordsSchemaVersion",
+      "tail": "=== RUN   TestMigrateRecordsSchemaVersion\n    connection_integration_test.go:28: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestMigrateRecordsSchemaVersion (0.00s)\nTestMigrateRecordsSchemaVersion in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestMigrateReturnsErrorOnClosedDB",
+      "tail": "=== RUN   TestMigrateReturnsErrorOnClosedDB\n    connection_integration_test.go:115: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestMigrateReturnsErrorOnClosedDB (0.00s)\nTestMigrateReturnsErrorOnClosedDB in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestMigrateReturnsErrorOnSchemaConflict",
+      "tail": "=== RUN   TestMigrateReturnsErrorOnSchemaConflict\n    connection_integration_test.go:142: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestMigrateReturnsErrorOnSchemaConflict (0.00s)\nTestMigrateReturnsErrorOnSchemaConflict in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "TestMigrateScopesJudicialTablesByTenant",
+      "tail": "=== RUN   TestMigrateScopesJudicialTablesByTenant\n    connection_integration_test.go:36: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestMigrateScopesJudicialTablesByTenant (0.00s)\nTestMigrateScopesJudicialTablesByTenant in core/infrastructure/platform/database/connection_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/connection_integration_test.go holds ."
+    },
+    {
+      "test": "(5 more)",
+      "tail": ""
+    }
+  ],
+  "seconds": 31.577936724,
+  "recorded": true,
+  "cpu_seconds": 5.636929000000009
+}
