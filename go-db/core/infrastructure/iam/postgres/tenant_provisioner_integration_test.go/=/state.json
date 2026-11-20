@@ -1,0 +1,19 @@
+{
+  "label": "core/infrastructure/iam/postgres/tenant_provisioner_integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:31.468047093Z",
+  "failures": [
+    {
+      "test": "TestProvisionPersistsTenantAndAdmin",
+      "tail": "=== RUN   TestProvisionPersistsTenantAndAdmin\nWARN: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\ncontext deadline exceeded\n    tenant_provisioner_integration_test.go:41: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestProvisionPersistsTenantAndAdmin (30.11s)\nTestProvisionPersistsTenantAndAdmin in core/infrastructure/iam/postgres/tenant_provisioner_integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/tenant_provisioner_integration_test.go holds ."
+    },
+    {
+      "test": "TestProvisionRollsBackTenantWhenAdminSaveFails",
+      "tail": "=== RUN   TestProvisionRollsBackTenantWhenAdminSaveFails\n    tenant_provisioner_integration_test.go:78: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 0 times, expected 2\n        context deadline exceeded\n--- SKIP: TestProvisionRollsBackTenantWhenAdminSaveFails (0.00s)\nTestProvisionRollsBackTenantWhenAdminSaveFails in core/infrastructure/iam/postgres/tenant_provisioner_integration_test.go skipped, and must_run says it must run: core/infrastructure/iam/postgres/tenant_provisioner_integration_test.go holds ."
+    }
+  ],
+  "seconds": 32.694816331,
+  "recorded": true,
+  "cpu_seconds": 6.465490999999986
+}

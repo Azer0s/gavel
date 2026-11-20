@@ -1,0 +1,15 @@
+{
+  "label": "core/infrastructure/platform/database/seed_integration_test.go",
+  "state": "failed",
+  "url": "https://concourse.home.simulevski.at/teams/sideways-works/pipelines/gavel/jobs/main-go-db",
+  "updated": "2026-11-20T08:17:31.468216111Z",
+  "failures": [
+    {
+      "test": "TestSeed",
+      "tail": "=== RUN   TestSeed\nWARN: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 1 times, expected 2\ncontext deadline exceeded\n    seed_integration_test.go:16: database: container runtime unavailable: run postgres: generic container: create container: wait until ready: \"database system is ready to accept connections\" matched 1 times, expected 2\n        context deadline exceeded\n--- SKIP: TestSeed (30.06s)\nTestSeed in core/infrastructure/platform/database/seed_integration_test.go skipped, and must_run says it must run: core/infrastructure/platform/database/seed_integration_test.go holds ."
+    }
+  ],
+  "seconds": 31.991239181,
+  "recorded": true,
+  "cpu_seconds": 5.388425000000012
+}
