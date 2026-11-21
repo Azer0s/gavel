@@ -1,0 +1,15 @@
+go:core/application/casefile/collectevidence#func:NewCommand
+go:core/application/casefile/collectevidence#func:WithScopedTargets
+go:core/application/casefile/collectevidence#func:WithToolSelection
+go:core/application/casefile/collectevidence#func:copyToolSelection
+go:core/application/casefile/collectevidence#method:Command.Absolute
+go:core/application/casefile/collectevidence#method:Command.DefaultBranch
+go:core/application/casefile/collectevidence#method:Command.Languages
+go:core/application/casefile/collectevidence#method:Command.ProjectName
+go:core/application/casefile/collectevidence#method:Command.Quick
+go:core/application/casefile/collectevidence#method:Command.ScopedTargets
+go:core/application/casefile/collectevidence#method:Command.TargetPattern
+go:core/application/casefile/collectevidence#method:Command.ToolSelection
+go:core/application/casefile/collectevidence#method:Command.Workspace
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

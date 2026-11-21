@@ -1,0 +1,6 @@
+go:core/domain/project/model/archpolicy#func:NewDenyRule
+go:core/domain/project/model/archpolicy#method:DenyRule.Deny
+go:core/domain/project/model/archpolicy#method:DenyRule.Name
+go:core/domain/project/model/archpolicy#method:DenyRule.Source
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

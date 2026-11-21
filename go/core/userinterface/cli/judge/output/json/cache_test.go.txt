@@ -1,0 +1,13 @@
+go:core/domain/shared/failure#func:New
+go:core/userinterface/cli/judge/output/json#func:WriteCache
+go:core/userinterface/cli/judge/output/json#func:buildCoverageTree
+go:core/userinterface/cli/judge/output/json#func:buildFindingsTree
+go:core/userinterface/cli/judge/output/json#func:previousPercents
+go:core/userinterface/cli/judge/output/json#func:toDeltaDTO
+go:core/userinterface/cli/judge/output/json#func:toFileCoverageDTOs
+go:core/userinterface/cli/judge/output/json#func:toFindingDTOs
+go:core/userinterface/cli/judge/output/json#func:toProjectDTO
+go:core/userinterface/cli/judge/output/json#func:toRulingDTOs
+go:core/userinterface/cli/judge/output/json#func:toViolationDTOs
+go:core/userinterface/cli/judge/output/json#func:writeProjectCache
+go:core/userinterface/cli/judge/output/tree#func:BuildCoverageTree

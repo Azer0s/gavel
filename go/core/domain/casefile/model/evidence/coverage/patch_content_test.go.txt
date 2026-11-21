@@ -1,0 +1,5 @@
+go:core/domain/casefile/model/evidence/coverage#func:NewPatchContent
+go:core/domain/casefile/model/evidence/coverage#func:NewPatchContentFromChanges
+go:core/domain/casefile/model/evidence/coverage#method:PatchContent.CoverableLines
+go:core/domain/casefile/model/evidence/coverage#method:PatchContent.CoveredLines
+go:core/domain/shared/failure#func:New

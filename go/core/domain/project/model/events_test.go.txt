@@ -1,0 +1,8 @@
+go:core/domain/iam/model/tenant#func:NewTenantID
+go:core/domain/project/model#func:NewArchitecturePolicyUpdated
+go:core/domain/project/model#func:NewProjectID
+go:core/domain/project/model#method:ArchitecturePolicyUpdated.EventName
+go:core/domain/project/model#method:ArchitecturePolicyUpdated.OccurredAt
+go:core/domain/project/model#method:ArchitecturePolicyUpdated.ProjectID
+go:core/domain/project/model#method:ProjectID.Equal
+go:core/domain/shared/failure#func:New

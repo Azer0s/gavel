@@ -1,0 +1,5 @@
+go:core/domain/casefile/model/evidence/finding#func:NewFingerprintID
+go:core/domain/casefile/model/evidence/finding#method:FingerprintID.Equal
+go:core/domain/casefile/model/evidence/finding#method:FingerprintID.Value
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
