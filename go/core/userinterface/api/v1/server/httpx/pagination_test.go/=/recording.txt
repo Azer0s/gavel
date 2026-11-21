@@ -1,0 +1,5 @@
+# observed
+go:core/userinterface/api/v1/server/httpx#func:NextCursor
+go:core/userinterface/api/v1/server/httpx#func:PageFromCursor
+go:core/userinterface/api/v1/server/httpx#func:decodeOffset
+go:core/userinterface/api/v1/server/httpx#func:encodeOffset

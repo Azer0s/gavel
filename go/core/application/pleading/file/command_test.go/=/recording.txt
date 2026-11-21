@@ -1,0 +1,11 @@
+# observed
+go:core/application/pleading/file#func:NewCommand
+go:core/application/pleading/file#method:Command.CommitSHA
+go:core/application/pleading/file#method:Command.Number
+go:core/application/pleading/file#method:Command.Petitioner
+go:core/application/pleading/file#method:Command.ProjectID
+go:core/application/pleading/file#method:Command.SourceBranch
+go:core/application/pleading/file#method:Command.TargetBranch
+go:core/application/pleading/file#method:Command.Title
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

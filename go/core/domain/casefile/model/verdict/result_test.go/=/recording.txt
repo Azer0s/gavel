@@ -1,0 +1,14 @@
+# observed
+go:core/domain/casefile/model/verdict#func:Compose
+go:core/domain/casefile/model/verdict#func:NewOutcome
+go:core/domain/casefile/model/verdict#func:NewRuling
+go:core/domain/casefile/model/verdict#func:ReconstituteResult
+go:core/domain/casefile/model/verdict#func:determineOutcome
+go:core/domain/casefile/model/verdict#method:Outcome.String
+go:core/domain/casefile/model/verdict#method:Result.EvaluatedAt
+go:core/domain/casefile/model/verdict#method:Result.Outcome
+go:core/domain/casefile/model/verdict#method:Result.Rulings
+go:core/domain/casefile/model/verdict#method:Ruling.Passed
+go:core/domain/casefile/model/verdict#method:Ruling.Subtype
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
