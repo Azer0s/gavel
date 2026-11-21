@@ -1,0 +1,8 @@
+# observed
+go:core/domain/iam/model/session#func:NewSessionID
+go:core/domain/iam/model/session#func:ParseSessionID
+go:core/domain/iam/model/session#method:SessionID.Equal
+go:core/domain/iam/model/session#method:SessionID.String
+go:core/domain/iam/model/session#method:SessionID.UUID
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

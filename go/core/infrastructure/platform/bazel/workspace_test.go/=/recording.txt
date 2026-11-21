@@ -1,0 +1,3 @@
+# observed
+go:core/infrastructure/platform/bazel#func:WorkspaceDir
+go:core/infrastructure/platform/bazel#func:isBazelWorkspace
