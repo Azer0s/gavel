@@ -1,0 +1,21 @@
+# observed
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/project/model/qualitygate#func:NewCountBySeverity
+go:core/domain/project/model/qualitygate#func:NewForbiddenList
+go:core/domain/project/model/qualitygate#func:NewMaxViolations
+go:core/domain/project/model/qualitygate#func:NewMinNewCodeCoverage
+go:core/domain/project/model/qualitygate#func:NewMinPercentage
+go:core/domain/project/model/qualitygate#func:NewRule
+go:core/domain/project/model/qualitygate#func:NewZeroTolerance
+go:core/domain/project/model/qualitygate#func:WithMinDelta
+go:core/domain/project/model/qualitygate#func:WithMinResolved
+go:core/domain/project/model/qualitygate#func:ptrEqual
+go:core/domain/project/model/qualitygate#func:validateCompatibility
+go:core/domain/project/model/qualitygate#method:MinPercentage.Equal
+go:core/domain/project/model/qualitygate#method:Rule.Equal
+go:core/domain/project/model/qualitygate#method:Rule.MinDelta
+go:core/domain/project/model/qualitygate#method:Rule.MinResolved
+go:core/domain/project/model/qualitygate#method:Rule.Strategy
+go:core/domain/project/model/qualitygate#method:Rule.Subtype
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

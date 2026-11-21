@@ -1,0 +1,16 @@
+# observed
+go:core/infrastructure/platform/bazel/catalog#func:ModulePrefix
+go:core/infrastructure/platform/bazel/installer#func:NewInstaller
+go:core/infrastructure/platform/bazel/installer#func:ensureIncludeLine
+go:core/infrastructure/platform/bazel/installer#func:ensureRegistryLines
+go:core/infrastructure/platform/bazel/installer#func:installLintConfigFilegroup
+go:core/infrastructure/platform/bazel/installer#func:isSelfModule
+go:core/infrastructure/platform/bazel/installer#func:renderTemplate
+go:core/infrastructure/platform/bazel/installer#func:rootBuildFile
+go:core/infrastructure/platform/bazel/installer#func:toBazelrcData
+go:core/infrastructure/platform/bazel/installer#func:toToolingSet
+go:core/infrastructure/platform/bazel/installer#func:verifyIncludeLine
+go:core/infrastructure/platform/bazel/installer#method:Installer.Install
+go:core/infrastructure/platform/bazel/installer#method:Installer.VerifyStructure
+go:core/infrastructure/platform/bazel/installer#method:Installer.installBazelrc
+go:core/infrastructure/platform/bazel/installer#method:Installer.installModule

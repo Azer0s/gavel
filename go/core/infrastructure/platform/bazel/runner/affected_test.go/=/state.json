@@ -1,0 +1,8 @@
+{
+  "label": "core/infrastructure/platform/bazel/runner/affected_test.go",
+  "state": "passed",
+  "updated": "2026-11-21T03:38:41.888610067Z",
+  "seconds": 0.990545365,
+  "recorded": true,
+  "cpu_seconds": 2.7066779999999824
+}

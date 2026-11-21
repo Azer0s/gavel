@@ -1,0 +1,12 @@
+# observed
+go:core/domain/casefile/model/evidence/coverage#func:NewContent
+go:core/domain/casefile/model/evidence/coverage#func:NewPatchContent
+go:core/domain/casefile/model/evidence/coverage#method:PatchContent.CoverableLines
+go:core/domain/casefile/model/evidence/coverage#method:PatchContent.Percent
+go:core/domain/project/model/qualitygate#func:NewMinNewCodeCoverage
+go:core/domain/project/model/qualitygate#func:NewOutcome
+go:core/domain/project/model/qualitygate#method:MinNewCodeCoverage.Evaluate
+go:core/domain/project/model/qualitygate#method:Outcome.Detail
+go:core/domain/project/model/qualitygate#method:Outcome.Passed
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

@@ -1,0 +1,5 @@
+# observed
+go:core/application/gavelspace/create#func:NewCommand
+go:core/application/gavelspace/create#method:Command.Name
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error

@@ -1,0 +1,11 @@
+# observed
+go:core/userinterface/cli/ui#func:DeltaSummary
+go:core/userinterface/cli/ui#func:FindingsBlock
+go:core/userinterface/cli/ui#func:ToolSummary
+go:core/userinterface/cli/ui#func:ViolationsBlock
+go:core/userinterface/cli/ui#func:abs
+go:core/userinterface/cli/ui#func:deltaLine
+go:core/userinterface/cli/ui#func:formatFinding
+go:core/userinterface/cli/ui#func:groupByFile
+go:core/userinterface/cli/ui#func:severityStyle
+go:core/userinterface/cli/ui#func:sortedKeys

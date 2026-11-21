@@ -1,0 +1,14 @@
+# observed
+go:core/domain/casefile/model/evidence/finding#func:NewFinding
+go:core/domain/casefile/model/evidence/finding#func:NewFingerprintID
+go:core/domain/casefile/model/evidence/finding#method:Finding.Equal
+go:core/domain/casefile/model/evidence/finding#method:Finding.FilePath
+go:core/domain/casefile/model/evidence/finding#method:Finding.ID
+go:core/domain/casefile/model/evidence/finding#method:Finding.Line
+go:core/domain/casefile/model/evidence/finding#method:Finding.Message
+go:core/domain/casefile/model/evidence/finding#method:Finding.RuleID
+go:core/domain/casefile/model/evidence/finding#method:Finding.Severity
+go:core/domain/casefile/model/evidence/finding#method:Finding.Tool
+go:core/domain/casefile/model/evidence/finding#method:FingerprintID.Equal
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
