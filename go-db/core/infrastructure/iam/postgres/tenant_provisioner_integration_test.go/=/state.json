@@ -1,0 +1,8 @@
+{
+  "label": "core/infrastructure/iam/postgres/tenant_provisioner_integration_test.go",
+  "state": "passed",
+  "updated": "2026-11-21T03:57:12.844605395Z",
+  "seconds": 1.812154734,
+  "recorded": true,
+  "cpu_seconds": 3.373010999999991
+}

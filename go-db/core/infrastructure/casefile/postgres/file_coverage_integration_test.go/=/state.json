@@ -1,0 +1,8 @@
+{
+  "label": "core/infrastructure/casefile/postgres/file_coverage_integration_test.go",
+  "state": "passed",
+  "updated": "2026-11-21T03:57:12.843828328Z",
+  "seconds": 68.55852206,
+  "recorded": true,
+  "cpu_seconds": 192.654474
+}
