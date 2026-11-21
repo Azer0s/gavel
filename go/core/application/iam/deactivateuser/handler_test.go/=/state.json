@@ -1,0 +1,8 @@
+{
+  "label": "core/application/iam/deactivateuser/handler_test.go",
+  "state": "passed",
+  "updated": "2026-11-21T04:20:54.434197886Z",
+  "seconds": 0.693745271,
+  "recorded": true,
+  "cpu_seconds": 1.6006160000000023
+}

@@ -1,0 +1,20 @@
+# observed
+go:core/domain/casefile/model/evidence#func:IsSubtypeFindingBased
+go:core/domain/casefile/model/evidence#method:Subtype.String
+go:core/domain/project/model/qualitygate#func:NewGate
+go:core/domain/project/model/qualitygate#func:NewMinPercentage
+go:core/domain/project/model/qualitygate#func:NewRule
+go:core/domain/project/model/qualitygate#func:NewZeroTolerance
+go:core/domain/project/model/qualitygate#func:WithMinResolved
+go:core/domain/project/model/qualitygate#func:ptrEqual
+go:core/domain/project/model/qualitygate#func:validateCompatibility
+go:core/domain/project/model/qualitygate#func:validateNoDuplicateSubtypes
+go:core/domain/project/model/qualitygate#method:Gate.Equal
+go:core/domain/project/model/qualitygate#method:Gate.RuleForSubtype
+go:core/domain/project/model/qualitygate#method:Gate.Rules
+go:core/domain/project/model/qualitygate#method:MinPercentage.Equal
+go:core/domain/project/model/qualitygate#method:Rule.Equal
+go:core/domain/project/model/qualitygate#method:Rule.Subtype
+go:core/domain/project/model/qualitygate#method:ZeroTolerance.Equal
+go:core/domain/shared/failure#func:New
+go:core/domain/shared/failure#method:sentinel.Error
